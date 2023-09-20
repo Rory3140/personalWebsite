@@ -1,3 +1,9 @@
 [submodule "loginPage"]
 	path = loginPage
 	url = https://github.com/Rory3140/loginPage.git
+[submodule "golfWebsite"]
+	path = golfWebsite
+	url = https://github.com/Rory3140/golfWebsite
+[submodule "resume"]
+	path = resume
+	url = https://github.com/Rory3140/resume
