@@ -1,3 +1,3 @@
 <?php
-    header('Location: /loginPage/modules/login.php');
+    header('Location: /modules/loginPage/login.php');
     exit;
