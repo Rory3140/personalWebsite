@@ -6,7 +6,7 @@ session_start(); // Start the session
 // Check if the user is logged in (userid is stored in the session)
 if (!isset($_SESSION['userid'])) {
     // User is not logged in, redirect to the login page
-    header('Location: ../loginPage/login.php');
+    header('Location: loginPage/login.php');
     exit;
 }
 
@@ -22,8 +22,8 @@ $username = $_SESSION['username'];
     <title>Home</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../loginPage/style.css">
-    <link rel="icon" href="../loginPage/images/websiteIcon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/websiteIcon.ico">
 
 </head>
 
@@ -35,9 +35,9 @@ $username = $_SESSION['username'];
             <div class="line"></div>
             <div class="line"></div>
         </div>
-        <a href="../loginPage/home.php" class="button">Home</a>
+        <a href="home.php" class="button">Home</a>
         <a href="" class="button">Profile</a>
-        <a href="../loginPage/logout.php" class="button" id="logout">Logout</a>
+        <a href="loginPage/logout.php" class="button" id="logout">Logout</a>
     </nav>
 
     <div class="container" id="homecont">
@@ -50,14 +50,14 @@ $username = $_SESSION['username'];
         </p>
 
         <div id="applist">
-            <a href="../todoList/todolist.php" class="button" id="app">To-Do List</a>
-            <a href="../golfStats/golfstats.php" class="button" id="app">Golf Stats</a>
-            <a href="../resume/index.html" class="button" id="app">Resume</a>
+            <a href="todoList/todolist.php" class="button" id="app">To-Do List</a>
+            <a href="golfStats/golfstats.php" class="button" id="app">Golf Stats</a>
+            <a href="resume/index.html" class="button" id="app">Resume</a>
         </div>
 
     </div>
 
-    <script src="../loginPage/script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
