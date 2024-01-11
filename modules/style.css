@@ -17,7 +17,7 @@ body {
   align-items: center;
 }
 
-#homecont {
+#wide_container {
   width: 65%;
 }
 
@@ -77,6 +77,37 @@ label {
   transform: translate(-4px, -4px);
 }
 
+.delete_button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: none;
+  opacity: 0.3;
+  transition: all 0.14s ease-out;
+}
+
+.delete_button:hover {
+  opacity: 1;
+}
+
+.delete_button:before,
+.delete_button:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+
+.delete_button:before {
+  transform: rotate(45deg);
+}
+
+.delete_button:after {
+  transform: rotate(-45deg);
+}
+
 #navbar {
   position: fixed;
   top: 0;
@@ -105,7 +136,7 @@ label {
   left: 0;
 }
 
-#menu-icon {
+#menu_icon {
   align-self: flex-start;
   margin: 10px;
   width: 30px;
@@ -127,7 +158,7 @@ label {
   width: 100px;
 }
 
-#applist {
+#app_list {
   display: flex;
 }
 
