@@ -30,7 +30,7 @@ $username = $_SESSION['username'];
 <body>
 
     <nav id="navbar">
-        <div id="menu-icon">
+        <div id="menu_icon">
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
@@ -40,7 +40,7 @@ $username = $_SESSION['username'];
         <a href="loginPage/logout.php" class="button" id="logout">Logout</a>
     </nav>
 
-    <div class="container" id="homecont">
+    <div class="container" id="wide_container">
         <h1>HOME</h1>
         <h2>Welcome,
             <?php echo $username; ?>
@@ -49,7 +49,7 @@ $username = $_SESSION['username'];
             <?php echo $userid; ?>
         </p>
 
-        <div id="applist">
+        <div id="app_list">
             <a href="todoList/todolist.php" class="button" id="app">To-Do List</a>
             <a href="golfStats/golfstats.php" class="button" id="app">Golf Stats</a>
             <a href="resume/index.html" class="button" id="app">Resume</a>
