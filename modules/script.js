@@ -13,7 +13,7 @@ window.onscroll = function () {
 };
 
 // Navbar opening on-click
-var menuButton = document.getElementById("menu_icon");
+var menuButton = document.getElementById("menu-icon");
 var navButtons = navBar.getElementsByClassName("button");
 var navHidden = true;
 
