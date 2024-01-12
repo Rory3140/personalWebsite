@@ -12,7 +12,7 @@ window.onscroll = function () {
   }
 };
 
-var menuButton = document.getElementById("menu-icon");
+var menuButton = document.getElementById("menu_icon");
 var navButtons = navBar.getElementsByClassName("button");
 var navHidden = true;
 
