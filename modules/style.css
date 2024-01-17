@@ -10,7 +10,7 @@ body {
   background-color: #c5d6db;
   box-shadow: 10px 8px 0px #7c9eb7;
   width: 300px;
-  padding: 50px;
+  /* padding: 25px; */
   margin: 50px 25px;
   display: flex;
   flex-direction: column;
@@ -153,13 +153,16 @@ label {
   background-color: #333;
 }
 
-#app {
-  height: 100px;
-  width: 100px;
-}
-
 #app_list {
   display: flex;
+  flex-wrap: wrap;
+}
+
+#app {
+  height: 100px;
+  min-height: 75px;
+  min-width: 75px;
+  margin: 5px;
 }
 
 .error {
