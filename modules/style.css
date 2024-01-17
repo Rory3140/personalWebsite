@@ -10,7 +10,7 @@ body {
   background-color: #c5d6db;
   box-shadow: 10px 8px 0px #7c9eb7;
   width: 300px;
-  /* padding: 25px; */
+  padding: 50px;
   margin: 50px 25px;
   display: flex;
   flex-direction: column;
