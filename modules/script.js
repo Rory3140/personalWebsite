@@ -18,15 +18,16 @@ var navButtons = navBar.getElementsByClassName("button");
 var navHidden = true;
 
 menuButton.onclick = function () {
+  // Display menu items
   if (navHidden) {
-    navBar.style.width = "200px";
+    navBar.style.width = "250px";
     navHidden = false;
-    console.log(navButtons.length);
     for (let i = 0; i < navButtons.length; i++) {
-      navButtons[i].style.left = "0px";
+      navButtons[i].style.left = "25px";
     }
+  // Hide menu items
   } else {
-    navBar.style.width = "50px";
+    navBar.style.width = "100px";
     navHidden = true;
     for (let i = 0; i < navButtons.length; i++) {
       navButtons[i].style.left = "-200px";
