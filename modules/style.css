@@ -117,7 +117,7 @@ label {
   align-items: center;
   background-color: #7c9eb7;
   width: 100px;
-  height: 9999px;
+  height: 100vh;
   transition: all 0.5s;
 }
 
