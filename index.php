@@ -1,3 +1,3 @@
 <?php
-    header('Location: ./modules/home.php');
+    header('Location: modules/home.php');
     exit;

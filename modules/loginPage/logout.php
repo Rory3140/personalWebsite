@@ -1,5 +1,5 @@
 <?php
     session_start();
     session_destroy();
-    header('Location: ./modules/home.php');
+    header('Location: ../home.php');
     exit;

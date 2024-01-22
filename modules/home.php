@@ -32,11 +32,16 @@
         </div>
         <?php
             if (!isset($_SESSION['userid'])) {
+                echo "<a href='loginPage/login.php' class='button' id='login'>Login</a>";
+            }
+        ?>
+        <?php
+            if (isset($_SESSION['userid'])) {
+                echo "<a href='' class='button'>Profile</a>";
                 echo "<a href='loginPage/logout.php' class='button' id='logout'>Logout</a>";
             }
         ?>
-        <a href="" class="button">Profile</a>
-        <a href="loginPage/logout.php" class="button" id="logout">Logout</a>
+        
     </nav>
 
     <div class="container" id="wide_container">
@@ -51,9 +56,9 @@
         </div>
 
         <div class="app_list">
+            <a href="resume/index.html" class="button" id="app">Resume</a>
             <a href="todoList/todolist.php" class="button" id="app">To-Do List</a>
             <a href="golfStats/golfstats.php" class="button" id="app">Golf Stats</a>
-            <a href="resume/index.html" class="button" id="app">Resume</a>
         </div>
 
     </div>
