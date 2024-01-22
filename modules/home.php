@@ -1,18 +1,13 @@
 <?php
-include_once 'conn.php';
+    include_once 'conn.php';
+    session_start(); // Start the session
 
-session_start(); // Start the session
-
-// Check if the user is logged in (userid is stored in the session)
-if (!isset($_SESSION['userid'])) {
-    // User is not logged in, redirect to the login page
-    header('Location: loginPage/login.php');
-    exit;
-}
-
-// Access the userid and username from the session
-$userid = $_SESSION['userid'];
-$username = $_SESSION['username'];
+    // Check if the user is logged in (userid is stored in the session)
+    if (isset($_SESSION['userid'])) {
+        // Access the userid and username from the session
+        $userid = $_SESSION['userid'];
+        $username = $_SESSION['username'];
+    }
 ?>
 
 <!DOCTYPE html>
@@ -35,21 +30,27 @@ $username = $_SESSION['username'];
             <div class="line"></div>
             <div class="line"></div>
         </div>
-        <a href="home.php" class="button">Home</a>
+        <?php
+            if (!isset($_SESSION['userid'])) {
+                echo "<a href='loginPage/logout.php' class='button' id='logout'>Logout</a>";
+            }
+        ?>
         <a href="" class="button">Profile</a>
         <a href="loginPage/logout.php" class="button" id="logout">Logout</a>
     </nav>
 
     <div class="container" id="wide_container">
         <h1>HOME</h1>
-        <h2>Welcome,
-            <?php echo $username; ?>
-        </h2>
-        <p>Your userid is:
-            <?php echo $userid; ?>
-        </p>
+        <div id="placeholder">
+            <?php 
+                if (isset($_SESSION['userid'])) {
+                    echo "<h2>Welcome, " . $username . "</h2>";
+                    echo "<p>Your userid is: " . $userid . "</p>";
+                }
+            ?>
+        </div>
 
-        <div id="app_list">
+        <div class="app_list">
             <a href="todoList/todolist.php" class="button" id="app">To-Do List</a>
             <a href="golfStats/golfstats.php" class="button" id="app">Golf Stats</a>
             <a href="resume/index.html" class="button" id="app">Resume</a>
