@@ -1,8 +1,13 @@
 <?php
-include_once '../conn.php';
-
 // Start the session
 session_start();
+
+// Check if the user is logged in (userid is stored in the session)
+if (!isset($_SESSION['userid'])) {
+    // User is not logged in, redirect to the login page
+    header('Location: ../loginPage/login.php');
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +36,8 @@ session_start();
 
     <div id="wide_container" class="container">
         <h1>Select List</h1>
-
+        <a href="publiclist" class="button" >Public List</a>
+        <a href="personallist" class="button" >Personal List</a>
     </div>
 
     <script src="../script.js"></script>
@@ -40,6 +46,3 @@ session_start();
 
 </html>
 
-<?php
-$conn->close();
-?>

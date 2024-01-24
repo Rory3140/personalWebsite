@@ -12,13 +12,7 @@ if (!isset($_SESSION['userid'])) {
 }
 
 // Access the userid and username from the session
-$userid = $_SESSION['userid'];
-$username = $_SESSION['username'];
-
-if ($_SESSION['public_list'] == true) {
-    $userid = 0;
-}
-
+$userid = 0;
 
 if (isset($_POST['submitBtn']) && $_POST['randcheck'] == $_SESSION['rand']) {
     $message_text = $_POST['message_text'];
@@ -68,7 +62,7 @@ if (isset($_POST['delete_row'])) {
     </nav>
 
     <div id="wide_container" class="container">
-        <h1>ToDo List</h1>
+        <h1>Public To-Do List</h1>
 
         <div class="default">
             <form action="" method="POST" name="delete_form">
