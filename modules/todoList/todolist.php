@@ -1,7 +1,8 @@
 <?php
 include_once '../conn.php';
 
-session_start(); // Start the session
+// Start the session
+session_start(); 
 
 // Check if the user is logged in (userid is stored in the session)
 if (!isset($_SESSION['userid'])) {
@@ -13,6 +14,11 @@ if (!isset($_SESSION['userid'])) {
 // Access the userid and username from the session
 $userid = $_SESSION['userid'];
 $username = $_SESSION['username'];
+
+if ($_SESSION['public_list'] == true) {
+    $userid = 0;
+}
+
 
 if (isset($_POST['submitBtn']) && $_POST['randcheck'] == $_SESSION['rand']) {
     $message_text = $_POST['message_text'];

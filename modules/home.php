@@ -1,6 +1,8 @@
 <?php
     include_once 'conn.php';
-    session_start(); // Start the session
+    
+    // Start the session
+    session_start();
 
     // Check if the user is logged in (userid is stored in the session)
     if (isset($_SESSION['userid'])) {
