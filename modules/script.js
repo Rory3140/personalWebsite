@@ -34,3 +34,9 @@ menuButton.onclick = function () {
     }
   }
 };
+
+function deleteRow(todoid) {
+    console.log("Deleting row with ID: " + todoid);
+    var hiddenInput = document.querySelector('input[name="todoid"]');
+    hiddenInput.value = todoid;
+  }

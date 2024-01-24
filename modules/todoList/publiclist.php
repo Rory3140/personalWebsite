@@ -77,14 +77,15 @@ if (isset($_POST['delete_row'])) {
 
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
-                            echo "<tr><td>" . $row["message_text"] . "</td>";
-                            echo "<td><input type='hidden' name='todoid' value='" . $row["todoid"] . "'>
-                                    <input class='delete_button' type='submit' name='delete_row' value='X'></td>";
+                            echo "<tr>";
+                            echo "<td>" . $row["message_text"] . "</td>";
+                            echo "<td><input class='delete_button' type='submit' name='delete_row' value='X' onclick=deleteRow(" . $row["todoid"] . ")></td>";
                             echo "</tr>";
                         }
                     }
                     ?>
                 </table>
+                <input type="hidden" name="todoid" value="">
             </form>
         </div>
 
