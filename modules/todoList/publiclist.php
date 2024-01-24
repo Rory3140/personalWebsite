@@ -71,8 +71,7 @@ if (isset($_POST['delete_row'])) {
                     <?php
                     $sql = "SELECT message_text, todoid
                     FROM todo t
-                    JOIN users u ON t.userid = u.userid
-                    WHERE u.userid = '$userid'
+                    WHERE t.userid = '$userid'
                     ORDER BY t.message_date ASC;";
                     $result = $conn->query($sql);
 

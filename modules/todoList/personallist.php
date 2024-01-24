@@ -26,7 +26,8 @@ if (isset($_POST['submitBtn']) && $_POST['randcheck'] == $_SESSION['rand']) {
     
 }
 if (isset($_POST['delete_row'])) {
-    $todoid = $_POST['todoid'];
+
+    $todoid = $_POST['delete_row'];
     $delete_sql = "DELETE FROM todo WHERE todoid = '$todoid';";
 
     if ($conn->query($delete_sql) === FALSE) {
@@ -79,8 +80,7 @@ if (isset($_POST['delete_row'])) {
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr><td>" . $row["message_text"] . "</td>";
-                            echo "<td><input type='hidden' name='todoid' value='" . $row["todoid"] . "'>
-                                    <input class='delete_button' type='submit' name='delete_row' value='X'></td>";
+                            echo "<td><input class='delete_button' type='submit' name='delete_row' value='" . $row["todoid"] . "'></td>";
                             echo "</tr>";
                         }
                     }
