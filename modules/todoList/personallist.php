@@ -59,6 +59,7 @@ if (isset($_POST['delete_row'])) {
         </div>
         <a href="../home.php" class="button">Home</a>
         <a href="" class="button">Profile</a>
+        <a href="listselector.php" class="button">Return</a>
         <a href="../loginPage/logout.php" class="button" id="logout">Logout</a>
     </nav>
 

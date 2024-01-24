@@ -11,7 +11,7 @@ if (!isset($_SESSION['userid'])) {
     exit;
 }
 
-// Access the userid and username from the session
+// Set userid to 0 for public list
 $userid = 0;
 
 if (isset($_POST['submitBtn']) && $_POST['randcheck'] == $_SESSION['rand']) {
@@ -58,6 +58,7 @@ if (isset($_POST['delete_row'])) {
         </div>
         <a href="../home.php" class="button">Home</a>
         <a href="" class="button">Profile</a>
+        <a href="listselector.php" class="button">Return</a>
         <a href="../loginPage/logout.php" class="button" id="logout">Logout</a>
     </nav>
 

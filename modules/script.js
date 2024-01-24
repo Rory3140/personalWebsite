@@ -1,6 +1,7 @@
+// ---------------- Checks script linking ----------------
 console.log("script.js Linked");
 
-// Sticky navbar
+// ---------------- Sticky navbar ----------------
 var navBar = document.getElementById("navbar");
 var navDim = navBar.offsetTop;
 
@@ -12,7 +13,7 @@ window.onscroll = function () {
   }
 };
 
-// Navbar opening on-click
+// ---------------- Navbar opening on-click ----------------
 var menuButton = document.getElementById("menu-icon");
 var navButtons = navBar.getElementsByClassName("button");
 var navHidden = true;
@@ -35,6 +36,7 @@ menuButton.onclick = function () {
   }
 };
 
+// ---------------- Delete Row Link ----------------
 function deleteRow(todoid) {
     console.log("Deleting row with ID: " + todoid);
     var hiddenInput = document.querySelector('input[name="todoid"]');
