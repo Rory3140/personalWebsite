@@ -59,7 +59,7 @@
 
         <div class="app_list">
             <a href="resume/index.html" class="button" id="app">Resume</a>
-            <a href="todoList/todolist.php" class="button" id="app">To-Do List</a>
+            <a href="todoList/listselector.php" class="button" id="app">To-Do List</a>
             <a href="golfStats/golfstats.php" class="button" id="app">Golf Stats</a>
         </div>
 
