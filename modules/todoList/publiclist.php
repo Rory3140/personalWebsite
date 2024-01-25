@@ -1,30 +1,26 @@
 <?php
-include_once '../conn.php';
+include_once './modules/conn.php';
 
 // Start the session
 session_start(); 
 
-// Check if the user is logged in (userid is stored in the session)
-if (!isset($_SESSION['userid'])) {
-    // User is not logged in, redirect to the login page
-    header('Location: ../loginPage/login.php');
-    exit;
-}
-
 // Set userid to 0 for public list
-$userid = 0;
+$publicid = 0;
 
+// Logic for submit list item button
 if (isset($_POST['submitBtn']) && $_POST['randcheck'] == $_SESSION['rand']) {
     $message_text = $_POST['message_text'];
 
     $sql = "INSERT INTO todo (userid, message_text)
-    VALUES ('$userid','$message_text');";
+    VALUES ('$publicid','$message_text');";
 
     if ($conn->query($sql) === FALSE) {
         echo "Error: " . $sql . "<br>";
     }
     
 }
+
+// Logic for delete row button
 if (isset($_POST['delete_row'])) {
     $todoid = $_POST['todoid'];
     $delete_sql = "DELETE FROM todo WHERE todoid = '$todoid';";
@@ -34,82 +30,87 @@ if (isset($_POST['delete_row'])) {
     }
     
 }
-
 ?>
 
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ToDo List</title>
+        <link rel="stylesheet" href="./modules/style.css">
+        <link rel="icon" href="./modules/images/websiteIcon.ico">
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ToDo List</title>
-    <link rel="stylesheet" href="../style.css">
-    <link rel="icon" href="../images/websiteIcon.ico">
+    </head>
 
-</head>
+    <body>
 
-<body>
+        <nav id="navbar">
+            <div id="menu-icon">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <a href="./modules/home.php" class="button">Home</a>
+            <a href="./modules/todoList/listselector.php" class="button">Return</a>
+            <?php
+                if (!isset($_SESSION['userid'])) {
+                    echo "<a href='./modulesloginPage/login.php' class='button' id='login'>Login</a>";
+                }
+            ?>
+            <?php
+                if (isset($_SESSION['userid'])) {
+                    echo "<a href='' class='button'>Profile</a>";
+                    echo "<a href='./modulesloginPage/logout.php' class='button' id='logout'>Logout</a>";
+                }
+            ?> 
+        </nav>
 
-    <nav id="navbar">
-        <div id="menu-icon">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
-        <a href="../home.php" class="button">Home</a>
-        <a href="" class="button">Profile</a>
-        <a href="listselector.php" class="button">Return</a>
-        <a href="../loginPage/logout.php" class="button" id="logout">Logout</a>
-    </nav>
+        <div id="wide_container" class="container">
+            <h1>Public To-Do List</h1>
 
-    <div id="wide_container" class="container">
-        <h1>Public To-Do List</h1>
+            <div class="default">
+                <form action="" method="POST" name="delete_form">
 
-        <div class="default">
-            <form action="" method="POST" name="delete_form">
+                    <table>
+                        <?php
+                        $sql = "SELECT message_text, todoid
+                        FROM todo t
+                        WHERE t.userid = '$publicid'
+                        ORDER BY t.message_date ASC;";
+                        $result = $conn->query($sql);
 
-                <table>
-                    <?php
-                    $sql = "SELECT message_text, todoid
-                    FROM todo t
-                    WHERE t.userid = '$userid'
-                    ORDER BY t.message_date ASC;";
-                    $result = $conn->query($sql);
-
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                            echo "<tr>";
-                            echo "<td>" . $row["message_text"] . "</td>";
-                            echo "<td><input class='delete_button' type='submit' name='delete_row' value='X' onclick=deleteRow(" . $row["todoid"] . ")></td>";
-                            echo "</tr>";
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<tr>";
+                                echo "<td>" . $row["message_text"] . "</td>";
+                                echo "<td><input class='delete_button' type='submit' name='delete_row' value='X' onclick=deleteRow(" . $row["todoid"] . ")></td>";
+                                echo "</tr>";
+                            }
                         }
-                    }
-                    ?>
-                </table>
-                <input type="hidden" name="todoid" value="">
+                        ?>
+                    </table>
+                    <input type="hidden" name="todoid" value="">
+                </form>
+            </div>
+
+            <form action="" method="POST" name="todoForm" id="todoForm">
+
+                <?php
+                $rand = rand();
+                $_SESSION['rand'] = $rand;
+                ?>
+                <input type="hidden" value="<?php echo $rand; ?>" name="randcheck">
+
+                <div>
+                    <input class="textbox" type="text" name="message_text" required>
+                </div>
+                <input class="button" type="submit" name="submitBtn" value="Add">
+
             </form>
         </div>
 
-        <form action="" method="POST" name="todoForm" id="todoForm">
-
-            <?php
-            $rand = rand();
-            $_SESSION['rand'] = $rand;
-            ?>
-            <input type="hidden" value="<?php echo $rand; ?>" name="randcheck">
-
-            <div>
-                <input class="textbox" type="text" name="message_text" required>
-            </div>
-            <input class="button" type="submit" name="submitBtn" value="Add">
-
-        </form>
-    </div>
-
-    <script src="../script.js"></script>
-
-</body>
-
+        <script src="./modules/script.js"></script>
+    </body>
 </html>
 
 <?php

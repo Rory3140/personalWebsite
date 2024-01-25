@@ -1,13 +1,6 @@
 <?php
 // Start the session
 session_start();
-
-// Check if the user is logged in (userid is stored in the session)
-if (!isset($_SESSION['userid'])) {
-    // User is not logged in, redirect to the login page
-    header('Location: ../loginPage/login.php');
-    exit;
-}
 ?>
 
 <!DOCTYPE html>
@@ -30,8 +23,17 @@ if (!isset($_SESSION['userid'])) {
             <div class="line"></div>
         </div>
         <a href="../home.php" class="button">Home</a>
-        <a href="" class="button">Profile</a>
-        <a href="../loginPage/logout.php" class="button" id="logout">Logout</a>
+        <?php
+            if (!isset($_SESSION['userid'])) {
+                echo "<a href='loginPage/login.php' class='button' id='login'>Login</a>";
+            }
+        ?>
+        <?php
+            if (isset($_SESSION['userid'])) {
+                echo "<a href='' class='button'>Profile</a>";
+                echo "<a href='loginPage/logout.php' class='button' id='logout'>Logout</a>";
+            }
+        ?> 
     </nav>
 
     <div id="wide_container" class="container">

@@ -14,6 +14,7 @@ if (!isset($_SESSION['userid'])) {
 // Access the userid and username from the session
 $userid = $_SESSION['userid'];
 
+// Logic for submit list item button
 if (isset($_POST['submitBtn']) && $_POST['randcheck'] == $_SESSION['rand']) {
     $message_text = $_POST['message_text'];
 
@@ -25,6 +26,8 @@ if (isset($_POST['submitBtn']) && $_POST['randcheck'] == $_SESSION['rand']) {
     }
     
 }
+
+// Logic for delete row button
 if (isset($_POST['delete_row'])) {
 
     $todoid = $_POST['todoid'];
@@ -35,7 +38,6 @@ if (isset($_POST['delete_row'])) {
     }
     
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -58,9 +60,18 @@ if (isset($_POST['delete_row'])) {
             <div class="line"></div>
         </div>
         <a href="../home.php" class="button">Home</a>
-        <a href="" class="button">Profile</a>
         <a href="listselector.php" class="button">Return</a>
-        <a href="../loginPage/logout.php" class="button" id="logout">Logout</a>
+        <?php
+            if (!isset($_SESSION['userid'])) {
+                echo "<a href='loginPage/login.php' class='button' id='login'>Login</a>";
+            }
+        ?>
+        <?php
+            if (isset($_SESSION['userid'])) {
+                echo "<a href='' class='button'>Profile</a>";
+                echo "<a href='loginPage/logout.php' class='button' id='logout'>Logout</a>";
+            }
+        ?> 
     </nav>
 
     <div id="wide_container" class="container">

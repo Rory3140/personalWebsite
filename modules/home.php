@@ -42,8 +42,7 @@
                 echo "<a href='' class='button'>Profile</a>";
                 echo "<a href='loginPage/logout.php' class='button' id='logout'>Logout</a>";
             }
-        ?>
-        
+        ?> 
     </nav>
 
     <div class="container" id="wide_container">
