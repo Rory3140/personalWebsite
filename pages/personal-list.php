@@ -1,54 +1,55 @@
 <?php
-include_once '../conn.php';
-
-// Start the session
-session_start(); 
-
-// Check if the user is logged in (userid is stored in the session)
-if (!isset($_SESSION['userid'])) {
-    // User is not logged in, redirect to the login page
-    header('Location: ../loginPage/login.php');
-    exit;
-}
-
-// Access the userid and username from the session
-$userid = $_SESSION['userid'];
-
-// Logic for submit list item button
-if (isset($_POST['submitBtn']) && $_POST['randcheck'] == $_SESSION['rand']) {
-    $message_text = $_POST['message_text'];
-
-    $sql = "INSERT INTO todo (userid, message_text)
-    VALUES ('$userid','$message_text');";
-
-    if ($conn->query($sql) === FALSE) {
-        echo "Error: " . $sql . "<br>";
-    }
+    include_once '../config.php';
+    include_once $connPath;
     
-}
+    // Start the session
+    session_start(); 
 
-// Logic for delete row button
-if (isset($_POST['delete_row'])) {
-
-    $todoid = $_POST['todoid'];
-    $delete_sql = "DELETE FROM todo WHERE todoid = '$todoid';";
-
-    if ($conn->query($delete_sql) === FALSE) {
-        echo "Error deleting record: " . $conn->error;
+    // Check if the user is logged in (userid is stored in the session)
+    if (!isset($_SESSION['userid'])) {
+        // User is not logged in, redirect to the login page
+        header('Location: ' . $loginPath);
+        exit;
     }
-    
-}
+
+    // Access the userid and username from the session
+    $userid = $_SESSION['userid'];
+
+    // Logic for submit list item button
+    if (isset($_POST['submitBtn']) && $_POST['randcheck'] == $_SESSION['rand']) {
+        $message_text = $_POST['message_text'];
+
+        $sql = "INSERT INTO todo (userid, message_text)
+        VALUES ('$userid','$message_text');";
+
+        if ($conn->query($sql) === FALSE) {
+            echo "Error: " . $sql . "<br>";
+        }
+        
+    }
+
+    // Logic for delete row button
+    if (isset($_POST['delete_row'])) {
+
+        $todoid = $_POST['todoid'];
+        $delete_sql = "DELETE FROM todo WHERE todoid = '$todoid';";
+
+        if ($conn->query($delete_sql) === FALSE) {
+            echo "Error deleting record: " . $conn->error;
+        }
+        
+    }
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <title>Public Todo List</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ToDo List</title>
-    <link rel="stylesheet" href="../style.css">
-    <link rel="icon" href="../images/websiteIcon.ico">
-
+    <link rel="stylesheet" href="<?php echo $cssPath; ?>">
+    <link rel="icon" href="<?php echo $websiteIcon; ?>">
 </head>
 
 <body>
@@ -59,17 +60,14 @@ if (isset($_POST['delete_row'])) {
             <div class="line"></div>
             <div class="line"></div>
         </div>
-        <a href="../home.php" class="button">Home</a>
-        <a href="listselector.php" class="button">Return</a>
+        <a href="<?php echo $homePath; ?>" class="button">Home</a>
+        <a href="<?php echo $listSelectorPath; ?>" class="button">Select List</a>
         <?php
             if (!isset($_SESSION['userid'])) {
-                echo "<a href='loginPage/login.php' class='button' id='login'>Login</a>";
-            }
-        ?>
-        <?php
-            if (isset($_SESSION['userid'])) {
-                echo "<a href='' class='button'>Profile</a>";
-                echo "<a href='loginPage/logout.php' class='button' id='logout'>Logout</a>";
+                echo "<a href=" . $loginPath . " class='button' id='login'>Login</a>";
+            } else {
+                echo "<a href=" . $profilePath . " class='button'>Profile</a>";
+                echo "<a href=" . $logoutPath . " class='button' id='logout'>Logout</a>";
             }
         ?> 
     </nav>
@@ -82,21 +80,21 @@ if (isset($_POST['delete_row'])) {
 
                 <table>
                     <?php
-                    $sql = "SELECT message_text, todoid
-                    FROM todo t
-                    JOIN users u ON t.userid = u.userid
-                    WHERE u.userid = '$userid'
-                    ORDER BY t.message_date ASC;";
-                    $result = $conn->query($sql);
+                        $sql = "SELECT message_text, todoid
+                        FROM todo t
+                        JOIN users u ON t.userid = u.userid
+                        WHERE u.userid = '$userid'
+                        ORDER BY t.message_date ASC;";
+                        $result = $conn->query($sql);
 
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                            echo "<tr>";
-                            echo "<td>" . $row["message_text"] . "</td>";
-                            echo "<td><input class='delete_button' type='submit' name='delete_row' value='X' onclick=deleteRow(" . $row["todoid"] . ")></td>";
-                            echo "</tr>";
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<tr>";
+                                echo "<td>" . $row["message_text"] . "</td>";
+                                echo "<td><input class='delete_button' type='submit' name='delete_row' value='X' onclick=deleteRow(" . $row["todoid"] . ")></td>";
+                                echo "</tr>";
+                            }
                         }
-                    }
                     ?>
                 </table>
                 <input type="hidden" name="todoid" value="">
@@ -106,8 +104,8 @@ if (isset($_POST['delete_row'])) {
         <form action="" method="POST" name="todoForm" id="todoForm">
 
             <?php
-            $rand = rand();
-            $_SESSION['rand'] = $rand;
+                $rand = rand();
+                $_SESSION['rand'] = $rand;
             ?>
             <input type="hidden" value="<?php echo $rand; ?>" name="randcheck">
 
@@ -119,12 +117,11 @@ if (isset($_POST['delete_row'])) {
         </form>
     </div>
 
-    <script src="../script.js"></script>
-
+    <script src="<?php echo $jsPath; ?>"></script>
 </body>
 
 </html>
 
 <?php
+// Close database connection
 $conn->close();
-?>

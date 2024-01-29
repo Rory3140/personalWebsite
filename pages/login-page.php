@@ -1,49 +1,48 @@
 <?php
-include_once '../conn.php';
-session_start(); // Start the session
+    include_once '../config.php';
+    include_once $connPath;
 
-$error = '';
-// Process login form data
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    // Start the session
+    session_start(); 
 
-    // Query the database to check if the provided credentials are valid
-    $query = "SELECT userid, username FROM users WHERE username = '$username' AND password = '$password'";
-    $result = mysqli_query($conn, $query);
+    $error = '';
+    // Process login form data
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
 
-    if (mysqli_num_rows($result) > 0) {
-        // Login successful, store userid in session and redirect to homepage.php
-        $row = mysqli_fetch_assoc($result);
-        $_SESSION['userid'] = $row['userid'];
-        $_SESSION['username'] = $row['username'];
-        header('Location: ../home.php');
-        exit;
-    } else {
-        $error = "Invalid credentials. Please try again.";
+        // Query the database to check if the provided credentials are valid
+        $query = "SELECT userid, username FROM users WHERE username = '$username' AND password = '$password'";
+        $result = mysqli_query($conn, $query);
+
+        if (mysqli_num_rows($result) > 0) {
+            // Login successful, store userid in session and redirect to homepage.php
+            $row = mysqli_fetch_assoc($result);
+            $_SESSION['userid'] = $row['userid'];
+            $_SESSION['username'] = $row['username'];
+            header('Location: ' . $homePath);
+            exit;
+        } else {
+            $error = "Invalid credentials. Please try again.";
+        }
     }
-}
-
-// Close the database connection
-mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
-<html lang="en" style>
+<html lang="en">
 
 <head>
     <title>Login</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="icon" href="../images/websiteIcon.ico">
-
+    <link rel="stylesheet" href="<?php echo $cssPath; ?>">
+    <link rel="icon" href="<?php echo $websiteIcon; ?>">
 </head>
 
 <body>
     <div class="container">
         <h1>LOGIN</h1>
-        <form action="login.php" method="post" name="statsForm">
+        <form action="" method="post" name="statsForm">
             <div>
                 <label for="username">username</label>
                 <input class="textbox" type="text" name="username" required>
@@ -58,11 +57,15 @@ mysqli_close($conn);
                 </p>
             <?php endif; ?>
             <input class="button" type="submit" name="submitBtn" value="login">
-            <label for="submitBtn">don't have an account? <a href="signup.php">Sign Up</a></label>
+            <label for="submitBtn">don't have an account? <a href="<?php echo $signupPath; ?>">Sign Up</a></label>
         </form>
     </div>
 
-    <script src="../script.js"></script>
+    <script src="<?php echo $jsPath; ?>"></script>
 </body>
 
 </html>
+
+<?php
+// Close database connection
+$conn->close();

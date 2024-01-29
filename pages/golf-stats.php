@@ -1,44 +1,46 @@
 <?php
-include_once '../conn.php';
+    include_once '../config.php';
+    include_once $connPath;
+    
+    // Start the session
+    session_start();
 
-session_start(); // Start the session
-
-// Check if the user is logged in (userid is stored in the session)
-if (!isset($_SESSION['userid'])) {
-    // User is not logged in, redirect to the login page
-    header('Location: ../loginPage/login.php');
-    exit;
-}
-
-// Access the userid and username from the session
-$userid = $_SESSION['userid'];
-$username = $_SESSION['username'];
-
-$_SESSION['previousClub'] = "DRV";
-
-if (isset($_POST['submitBtn']) && $_POST['randcheck'] == $_SESSION['rand']) {
-    $club = $_POST['club'];
-    $_SESSION['previousClub'] = $club;
-    $distance = $_POST['distance'];
-
-    $sql = "INSERT INTO shots (userid, club, distance)
-    VALUES ('$userid','$club', '$distance');";
-
-    if ($conn->query($sql) === FALSE) {
-        echo "Error: " . $sql . "<br>";
+    // Check if the user is logged in (userid is stored in the session)
+    if (!isset($_SESSION['userid'])) {
+        // User is not logged in, redirect to the login page
+        header('Location: ' . $loginPath);
+        exit;
     }
-}
+
+    // Access the userid and username from the session
+    $userid = $_SESSION['userid'];
+    $username = $_SESSION['username'];
+
+    $_SESSION['previousClub'] = "DRV";
+
+    if (isset($_POST['submitBtn']) && $_POST['randcheck'] == $_SESSION['rand']) {
+        $club = $_POST['club'];
+        $_SESSION['previousClub'] = $club;
+        $distance = $_POST['distance'];
+
+        $sql = "INSERT INTO shots (userid, club, distance)
+        VALUES ('$userid','$club', '$distance');";
+
+        if ($conn->query($sql) === FALSE) {
+            echo "Error: " . $sql . "<br>";
+        }
+    }
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <title>Golf Stats</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Golf Website</title>
-    <link rel="stylesheet" href="../style.css">
-    <link rel="icon" href="../images/websiteIcon.ico">
-
+    <link rel="stylesheet" href="<?php echo $cssPath; ?>">
+    <link rel="icon" href="<?php echo $websiteIcon; ?>">
 </head>
 
 <body>
@@ -49,20 +51,25 @@ if (isset($_POST['submitBtn']) && $_POST['randcheck'] == $_SESSION['rand']) {
             <div class="line"></div>
             <div class="line"></div>
         </div>
-        <a href="../home.php" class="button">Home</a>
-        <a href="" class="button">Profile</a>
-        <a href="../loginPage/logout.php" class="button" id="logout">Logout</a>
+        <a href="<?php echo $homePath; ?>" class="button">Home</a>
+        <?php
+            if (!isset($_SESSION['userid'])) {
+                echo "<a href=" . $loginPath . " class='button' id='login'>Login</a>";
+            } else {
+                echo "<a href=" . $profilePath . " class='button'>Profile</a>";
+                echo "<a href=" . $logoutPath . " class='button' id='logout'>Logout</a>";
+            }
+        ?> 
     </nav>
 
     <div class="container">
         <h1>Golf Stats</h1>
-        <h2>Welcome,
-            <?php echo $username; ?>
-        </h2>
+        <h2>Welcome, <?php echo $username; ?></h2>
+
         <form action="" method="POST" name="statsForm">
             <?php
-            $rand = rand();
-            $_SESSION['rand'] = $rand;
+                $rand = rand();
+                $_SESSION['rand'] = $rand;
             ?>
             <input type="hidden" value="<?php echo $rand; ?>" name="randcheck" />
 
@@ -120,35 +127,35 @@ if (isset($_POST['submitBtn']) && $_POST['randcheck'] == $_SESSION['rand']) {
             </div>
         </form>
 
-        <div class="default">
+        <div>
             <table>
                 <tr>
                     <th>Club</th>
                     <th>Average Distance(yds)</th>
                 </tr>
                 <?php
-                $sql = "SELECT ad.club, ad.avg_distance
-                FROM average_distances ad
-                JOIN users u ON ad.userid = u.userid
-                WHERE u.userid = '$userid'
-                ORDER BY ad.avg_distance DESC;";
-                $result = $conn->query($sql);
+                    $sql = "SELECT ad.club, ad.avg_distance
+                    FROM average_distances ad
+                    JOIN users u ON ad.userid = u.userid
+                    WHERE u.userid = '$userid'
+                    ORDER BY ad.avg_distance DESC;";
+                    $result = $conn->query($sql);
 
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<tr><td>" . $row["club"] . "</td><td>" . $row["avg_distance"] . "</td></tr>";
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<tr><td>" . $row["club"] . "</td><td>" . $row["avg_distance"] . "</td></tr>";
+                        }
                     }
-                }
                 ?>
             </table>
         </div>
     </div>
 
-    <script src="../script.js"></script>
+    <script src="<?php echo $jsPath; ?>"></script>
 </body>
 
 </html>
 
 <?php
+// Close database connection
 $conn->close();
-?>
