@@ -38,8 +38,8 @@ session_start();
 
     <div id="wide_container" class="container">
         <h1>Select List</h1>
-        <a href="publiclist" class="button" >Public List</a>
-        <a href="personallist" class="button" >Personal List</a>
+        <a href="publiclist.php" class="button" >Public List</a>
+        <a href="personallist.php" class="button" >Personal List</a>
     </div>
 
     <script src="../script.js"></script>
