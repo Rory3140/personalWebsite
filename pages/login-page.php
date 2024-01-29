@@ -56,8 +56,8 @@
                     <?php echo $error; ?>
                 </p>
             <?php endif; ?>
-            <input class="button" type="submit" name="submitBtn" value="login">
-            <label for="submitBtn">don't have an account? <a href="<?php echo $signupPath; ?>">Sign Up</a></label>
+            <input class="button" type="submit" name="submit-button" value="login">
+            <label for="submit-button">don't have an account? <a href="<?php echo $signupPath; ?>">Sign Up</a></label>
         </form>
     </div>
 

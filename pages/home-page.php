@@ -41,7 +41,7 @@
         ?> 
     </nav>
 
-    <div class="container" id="wide_container">
+    <div class="container" id="wide-container">
         <h1>HOME</h1>
         <div id="placeholder">
             <?php 
@@ -52,10 +52,10 @@
             ?>
         </div>
 
-        <div class="app_list">
-            <a href="<?php echo $resumePath; ?>" class="button" id="app">Resume</a>
-            <a href="<?php echo $listSelectorPath; ?>" class="button" id="app">To-Do List</a>
-            <a href="<?php echo $golfStatsPath; ?>" class="button" id="app">Golf Stats</a>
+        <div class="app-list">
+            <a href="<?php echo $resumePath; ?>" class="button app">Resume</a>
+            <a href="<?php echo $listSelectorPath; ?>" class="button app">To-Do List</a>
+            <a href="<?php echo $golfStatsPath; ?>" class="button app">Golf Stats</a>
         </div>
 
     </div>

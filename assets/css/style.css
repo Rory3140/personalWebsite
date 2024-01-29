@@ -19,7 +19,7 @@ body {
   align-items: center;
 }
 
-#wide_container {
+#wide-container {
   width: 65%;
 }
 
@@ -129,7 +129,7 @@ label {
 }
 
 /* ---------------- Delete Button ---------------- */
-.delete_button {
+.delete-button {
   width: 32px;
   height: 32px;
   border: none;
@@ -138,12 +138,12 @@ label {
   transition: all 0.14s ease-out;
 }
 
-.delete_button:hover {
+.delete-button:hover {
   opacity: 1;
 }
 
-.delete_button:before,
-.delete_button:after {
+.delete-button:before,
+.delete-button:after {
   position: absolute;
   left: 15px;
   content: ' ';
@@ -152,11 +152,11 @@ label {
   background-color: #333;
 }
 
-.delete_button:before {
+.delete-button:before {
   transform: rotate(45deg);
 }
 
-.delete_button:after {
+.delete-button:after {
   transform: rotate(-45deg);
 }
 
@@ -165,14 +165,14 @@ label {
   height: 100px;
 }
 
-.app_list {
+.app-list {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
 
-#app {
+.app {
   height: 30%;
   width: auto;
   min-height: 75px;

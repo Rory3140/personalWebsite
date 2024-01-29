@@ -11,10 +11,10 @@
         $email = $_POST['email'];
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $retype_password = $_POST['retype_password'];
+        $retypePassword = $_POST['retype-password'];
 
         // Basic password validation
-        if ($password !== $retype_password) {
+        if ($password !== $retypePassword) {
             $error = "Passwords do not match. Please try again.";
         } else {
             // Query the database to check if the email or username is already taken
@@ -51,7 +51,7 @@
 <body>
     <div class="container">
         <h1>SIGN UP</h1>
-        <form action="signup.php" method="post">
+        <form action="" method="post">
             <div>
                 <label for="username">username</label>
                 <input class="textbox" type="text" name="username" required>
@@ -65,16 +65,16 @@
                 <input class="textbox" type="password" name="password" required>
             </div>
             <div>
-                <label for="retype_password">re-type password</label>
-                <input class="textbox" type="password" name="retype_password" required>
+                <label for="retype-password">re-type password</label>
+                <input class="textbox" type="password" name="retype-password" required>
             </div>
             <?php if ($error): ?>
                 <p class="error">
                     <?php echo $error; ?>
                 </p>
             <?php endif; ?>
-            <input class="button" type="submit" name="submitBtn" value="submit">
-            <label for="submitBtn">already have an account? <a href="<?php echo $loginPath; ?>">Login</a></label>
+            <input class="button" type="submit" name="submit-button" value="submit">
+            <label for="submit-button">already have an account? <a href="<?php echo $loginPath; ?>">Login</a></label>
         </form>
     </div>
 

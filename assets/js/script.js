@@ -39,6 +39,6 @@ menuButton.onclick = function () {
 // ---------------- Delete Row Link ----------------
 function deleteRow(todoid) {
     console.log("Deleting row with ID: " + todoid);
-    var hiddenInput = document.querySelector('input[name="todoid"]');
+    var hiddenInput = document.querySelector('input[name="todo-id"]');
     hiddenInput.value = todoid;
   }

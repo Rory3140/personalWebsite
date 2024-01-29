@@ -35,7 +35,7 @@
         ?> 
     </nav>
 
-    <div id="wide_container" class="container">
+    <div id="wide-container" class="container">
         <h1>Select List</h1>
         <a href="<?php echo $publicListPath; ?>" class="button" >Public List</a>
         <a href="<?php echo $personalListPath; ?>" class="button" >Personal List</a>

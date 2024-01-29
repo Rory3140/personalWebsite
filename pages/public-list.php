@@ -9,11 +9,11 @@
     $publicid = 0;
 
     // Logic for submit list item button
-    if (isset($_POST['submitBtn']) && $_POST['randcheck'] == $_SESSION['rand']) {
-        $message_text = $_POST['message_text'];
+    if (isset($_POST['submit-button']) && $_POST['rand-check'] == $_SESSION['rand']) {
+        $messageText = $_POST['message-text'];
 
         $sql = "INSERT INTO todo (userid, message_text)
-        VALUES ('$publicid','$message_text');";
+        VALUES ('$publicid','$messageText');";
 
         if ($conn->query($sql) === FALSE) {
             echo "Error: " . $sql . "<br>";
@@ -22,11 +22,11 @@
     }
 
     // Logic for delete row button
-    if (isset($_POST['delete_row'])) {
-        $todoid = $_POST['todoid'];
-        $delete_sql = "DELETE FROM todo WHERE todoid = '$todoid';";
+    if (isset($_POST['delete-row'])) {
+        $todoid = $_POST['todo-id'];
+        $deleteSQL = "DELETE FROM todo WHERE todoid = '$todoid';";
 
-        if ($conn->query($delete_sql) === FALSE) {
+        if ($conn->query($deleteSQL) === FALSE) {
             echo "Error deleting record: " . $conn->error;
         }
         
@@ -64,11 +64,11 @@
         ?> 
     </nav>
 
-    <div id="wide_container" class="container">
+    <div id="wide-container" class="container">
         <h1>Public To-Do List</h1>
 
         <div class="default">
-            <form action="" method="POST" name="delete_form">
+            <form action="" method="POST" name="delete-form">
 
                 <table>
                     <?php
@@ -82,28 +82,28 @@
                             while ($row = $result->fetch_assoc()) {
                                 echo "<tr>";
                                 echo "<td>" . $row["message_text"] . "</td>";
-                                echo "<td><input class='delete_button' type='submit' name='delete_row' value='X' onclick=deleteRow(" . $row["todoid"] . ")></td>";
+                                echo "<td><input class='delete-button' type='submit' name='delete-row' value='X' onclick=deleteRow(" . $row["todoid"] . ")></td>";
                                 echo "</tr>";
                             }
                         }
                     ?>
                 </table>
-                <input type="hidden" name="todoid" value="">
+                <input type="hidden" name="todo-id" value="">
             </form>
         </div>
 
-        <form action="" method="POST" name="todoForm" id="todoForm">
+        <form action="" method="POST" name="todo-form">
 
             <?php
                 $rand = rand();
                 $_SESSION['rand'] = $rand;
             ?>
-            <input type="hidden" value="<?php echo $rand; ?>" name="randcheck">
+            <input type="hidden" value="<?php echo $rand; ?>" name="rand-check">
 
             <div>
-                <input class="textbox" type="text" name="message_text" required>
+                <input class="textbox" type="text" name="message-text" required>
             </div>
-            <input class="button" type="submit" name="submitBtn" value="Add">
+            <input class="button" type="submit" name="submit-button" value="Add">
         </form>
     </div>
 

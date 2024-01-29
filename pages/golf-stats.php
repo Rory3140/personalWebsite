@@ -18,7 +18,7 @@
 
     $_SESSION['previousClub'] = "DRV";
 
-    if (isset($_POST['submitBtn']) && $_POST['randcheck'] == $_SESSION['rand']) {
+    if (isset($_POST['submit-button']) && $_POST['rand-check'] == $_SESSION['rand']) {
         $club = $_POST['club'];
         $_SESSION['previousClub'] = $club;
         $distance = $_POST['distance'];
@@ -66,12 +66,12 @@
         <h1>Golf Stats</h1>
         <h2>Welcome, <?php echo $username; ?></h2>
 
-        <form action="" method="POST" name="statsForm">
+        <form action="" method="POST" name="stats-form">
             <?php
                 $rand = rand();
                 $_SESSION['rand'] = $rand;
             ?>
-            <input type="hidden" value="<?php echo $rand; ?>" name="randcheck" />
+            <input type="hidden" value="<?php echo $rand; ?>" name="rand-check" />
 
             <div class="default">
                 <label for="club">Select Your Club: </label>
@@ -123,7 +123,7 @@
                 <input type="number" class="textbox" min="0" max="999" step=".01" name="distance" required>
             </div>
             <div class="default">
-                <input type="submit" class="button" name="submitBtn" value="Add Shot">
+                <input type="submit" class="button" name="submit-button" value="Add Shot">
             </div>
         </form>
 
