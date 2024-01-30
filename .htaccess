@@ -9,3 +9,6 @@
     Order Allow,Deny
     Deny from all
 </Files>
+
+# Block indexing directories
+Options -Indexes
