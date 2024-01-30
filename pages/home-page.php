@@ -43,21 +43,20 @@
 
     <div class="container" id="wide-container">
         <h1>HOME</h1>
-        <div id="placeholder">
-            <?php 
-                if (isset($_SESSION['userid'])) {
-                    echo "<h2>Welcome, " . $username . "</h2>";
-                    echo "<p>Your userid is: " . $userid . "</p>";
-                }
-            ?>
+        <div id="home-container">
+            <div class="home-list">
+                <?php 
+                    if (isset($_SESSION['userid'])) {
+                        echo "<h2>Welcome, " . $username . "</h2>";
+                    }
+                ?>
+            </div>
+            <div class="home-list">
+                <a href="<?php echo $resumePath; ?>" class="button app">Resume</a>
+                <a href="<?php echo $listSelectorPath; ?>" class="button app">To-Do List</a>
+                <a href="<?php echo $golfStatsPath; ?>" class="button app">Golf Stats</a>
+            </div>
         </div>
-
-        <div class="app-list">
-            <a href="<?php echo $resumePath; ?>" class="button app">Resume</a>
-            <a href="<?php echo $listSelectorPath; ?>" class="button app">To-Do List</a>
-            <a href="<?php echo $golfStatsPath; ?>" class="button app">Golf Stats</a>
-        </div>
-
     </div>
 
     <script src="<?php echo $jsPath; ?>"></script>

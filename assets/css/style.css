@@ -20,7 +20,13 @@ body {
 }
 
 #wide-container {
+  min-width: 300px;
   width: 65%;
+}
+
+#home-container {
+  display: flex;
+  flex-direction: row;
 }
 
 /*---------------- Navbar ----------------*/
@@ -161,11 +167,8 @@ label {
 }
 
 /* ---------------- Home Page ---------------- */
-#placeholder {
-  height: 100px;
-}
 
-.app-list {
+.home-list {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
