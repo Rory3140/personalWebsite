@@ -2,7 +2,7 @@
 console.log("script.js Linked");
 
 // ---------------- Sticky navbar ----------------
-var navBar = document.getElementById("navbar");
+var navBar = document.getElementById("nav-bar");
 var navDim = navBar.offsetTop;
 
 window.onscroll = function () {
@@ -15,20 +15,21 @@ window.onscroll = function () {
 
 // ---------------- Navbar opening on-click ----------------
 var menuButton = document.getElementById("menu-icon");
-var navButtons = navBar.getElementsByClassName("button");
+var navMenu = document.getElementById("nav-menu");
+var navButtons = navMenu.getElementsByClassName("button");
 var navHidden = true;
 
 menuButton.onclick = function () {
   // Display menu items
   if (navHidden) {
-    navBar.style.width = "250px";
+    navMenu.style.width = "300px";
     navHidden = false;
     for (let i = 0; i < navButtons.length; i++) {
-      navButtons[i].style.left = "25px";
+      navButtons[i].style.left = "50px";
     }
   // Hide menu items
   } else {
-    navBar.style.width = "100px";
+    navMenu.style.width = "100px";
     navHidden = true;
     for (let i = 0; i < navButtons.length; i++) {
       navButtons[i].style.left = "-200px";

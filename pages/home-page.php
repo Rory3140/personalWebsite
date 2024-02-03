@@ -25,12 +25,14 @@
 </head>
 
 <body>
-    <nav id="navbar">
+    <nav id="nav-bar">
         <div id="menu-icon">
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
         </div>
+    </nav>
+    <div id="nav-menu">
         <?php
             if (!isset($_SESSION['userid'])) {
                 echo "<a href=" . $loginPath . " class='button' id='login'>Login</a>";
@@ -39,19 +41,19 @@
                 echo "<a href=" . $logoutPath . " class='button' id='logout'>Logout</a>";
             }
         ?> 
-    </nav>
+    </div>
 
     <div class="container" id="wide-container">
         <h1>HOME</h1>
         <div id="home-container">
-            <div class="home-list">
+            <div class="home-block">
                 <?php 
                     if (isset($_SESSION['userid'])) {
                         echo "<h2>Welcome, " . $username . "</h2>";
                     }
                 ?>
             </div>
-            <div class="home-list">
+            <div class="home-block">
                 <a href="<?php echo $resumePath; ?>" class="button app">Resume</a>
                 <a href="<?php echo $listSelectorPath; ?>" class="button app">To-Do List</a>
                 <a href="<?php echo $golfStatsPath; ?>" class="button app">Golf Stats</a>
