@@ -34,9 +34,10 @@ body {
   position: fixed;
   top: 0;
   display: flex;
+  justify-content: flex-start;
   align-items: center;
   height: 50px;
-  width: 100vw;
+  width: 100%;
   background-color: #7c9eb7;
 }
 
@@ -184,7 +185,6 @@ label {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  border: 2px solid black;
   padding: 10px;
   margin: 20px;
 }

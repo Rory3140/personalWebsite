@@ -17,13 +17,15 @@
 </head>
 
 <body>
-
-    <nav id="navbar">
+    <nav id="nav-bar">
         <div id="menu-icon">
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
         </div>
+    </nav>
+
+    <div id="nav-menu">
         <a href="<?php echo $homePath; ?>" class="button">Home</a>
         <?php
             if (!isset($_SESSION['userid'])) {
@@ -33,7 +35,7 @@
                 echo "<a href=" . $logoutPath . " class='button' id='logout'>Logout</a>";
             }
         ?> 
-    </nav>
+    </div>
 
     <div id="wide-container" class="container">
         <h1>Select List</h1>

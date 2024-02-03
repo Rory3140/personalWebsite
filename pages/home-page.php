@@ -32,6 +32,7 @@
             <div class="line"></div>
         </div>
     </nav>
+    
     <div id="nav-menu">
         <?php
             if (!isset($_SESSION['userid'])) {
