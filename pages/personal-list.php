@@ -74,10 +74,12 @@
         ?> 
     </div>
 
-    <div id="wide-container" class="container">
-        <h1>Personal To-Do List</h1>
+    <div class="default-container wide-container">
+        <div class="container-header">
+            <h1>Personal To-Do List</h1>
+        </div>
 
-        <div class="default">
+        <div>
             <form action="" method="POST" name="delete-form">
 
                 <table>

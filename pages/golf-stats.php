@@ -64,9 +64,10 @@
         ?> 
     </div>
     
-    <div class="container">
-        <h1>Golf Stats</h1>
-        <h2>Welcome, <?php echo $username; ?></h2>
+    <div class="default-container">
+        <div class="container-header">
+            <h1>Golf Stats</h1>
+        </div>
 
         <form action="" method="POST" name="stats-form">
             <?php

@@ -7,28 +7,6 @@ body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-/* ---------------- Container ---------------- */
-.container {
-  background-color: #c5d6db;
-  box-shadow: 10px 8px 0px #7c9eb7;
-  width: 300px;
-  padding: 50px 10px;
-  margin: 50px 25px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#wide-container {
-  min-width: 300px;
-  width: 65%;
-}
-
-#home-container {
-  display: flex;
-  flex-direction: row;
-}
-
 /*---------------- Navbar ----------------*/
 #nav-bar {
   position: fixed;
@@ -39,6 +17,8 @@ body {
   height: 50px;
   width: 100%;
   background-color: #7c9eb7;
+  border-bottom: 2px solid #333;
+  z-index: 1;
 }
 
 #menu-icon {
@@ -64,7 +44,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #c5d6db;
+  background-color: #7c9eb7;
   width: 100px;
   height: 100vh;
   transition: all 0.5s;
@@ -72,7 +52,7 @@ body {
 
 #nav-menu a {
   display: flex;
-  background-color: #7c9eb7;
+  background-color: #c5d6db;
   position: relative;
   left: -200px;
   width: 100px;
@@ -84,6 +64,96 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+}
+
+/* ---------------- Container ---------------- */
+.default-container {
+  background-color: #c5d6db;
+  box-shadow: 10px 8px 0px #7c9eb7;
+  width: 35%;
+  min-width: 300px;
+  padding: 30px 20px;
+  margin: 60px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wide-container {
+  min-width: 400px;
+  width: 65%;
+}
+
+.container-header {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.container-header h1 {
+  margin: 15px;
+}
+
+.container-header h2 {
+  margin: 15px;
+}
+
+.container-header h1::after {
+  content: "";
+  background: #ffc20c;
+  width: 75%;
+  height: 4px;
+  border-radius: 2px;
+  display: block;
+}
+
+/* ---------------- Button ---------------- */
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffc20c;
+  border: none;
+  color: #000;
+  border: 2px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  height: 40px;
+  width: 200px;
+  overflow: hidden;
+  padding: 10px 14px;
+  margin: 13px;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  transition: all 0.14s ease-out;
+}
+
+.button:hover {
+  box-shadow: 4px 4px 0 #000;
+  transform: translate(-4px, -4px);
+}
+
+/* ---------------- Home Page ---------------- */
+
+.home-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  margin: 20px;
+}
+
+.app {
+  width: 75%;
+  max-width: 300px;
+  margin: 5px;
 }
 
 /* ---------------- Form ---------------- */
@@ -109,39 +179,11 @@ label {
   height: 40px;
   width: 200px;
   padding: 8px;
-  margin: 5px;
+  margin: 10px;
   transition: all 0.14s ease-out;
 }
 
 .textbox:hover {
-  box-shadow: 4px 4px 0 #000;
-  transform: translate(-4px, -4px);
-}
-
-/* ---------------- Button ---------------- */
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #ffc20c;
-  border: none;
-  color: #000;
-  border: 2px solid black;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  height: 40px;
-  width: 200px;
-  overflow: hidden;
-  padding: 12px 16px;
-  margin: 13px;
-  text-decoration: none;
-  text-overflow: ellipsis;
-  text-overflow: ellipsis;
-  transition: all 0.14s ease-out;
-}
-
-.button:hover {
   box-shadow: 4px 4px 0 #000;
   transform: translate(-4px, -4px);
 }
@@ -176,25 +218,6 @@ label {
 
 .delete-button:after {
   transform: rotate(-45deg);
-}
-
-/* ---------------- Home Page ---------------- */
-
-.home-block {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  margin: 20px;
-}
-
-.app {
-  height: 30px;
-  width: 30px;
-  min-height: 75px;
-  min-width: 75px;
-  margin: 5px;
 }
 
 /* ---------------- Error ---------------- */

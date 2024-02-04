@@ -44,21 +44,20 @@
         ?> 
     </div>
 
-    <div class="container" id="wide-container">
-        <h1>HOME</h1>
-        <div id="home-container">
-            <div class="home-block">
-                <?php 
-                    if (isset($_SESSION['userid'])) {
-                        echo "<h2>Welcome, " . $username . "</h2>";
-                    }
-                ?>
-            </div>
-            <div class="home-block">
-                <a href="<?php echo $resumePath; ?>" class="button app">Resume</a>
-                <a href="<?php echo $listSelectorPath; ?>" class="button app">To-Do List</a>
-                <a href="<?php echo $golfStatsPath; ?>" class="button app">Golf Stats</a>
-            </div>
+    <div class="default-container wide-container" id="home-container">
+        <div class="container-header">
+             <h1>Dashboard</h1>
+            <?php 
+                if (isset($_SESSION['userid'])) {
+                    echo "<h2>Welcome, " . $username . "</h2>";
+                }
+            ?>
+        </div>
+        
+        <div class="home-block">
+            <a href="<?php echo $resumePath; ?>" class="button app">Resume</a>
+            <a href="<?php echo $listSelectorPath; ?>" class="button app">To-Do List</a>
+            <a href="<?php echo $golfStatsPath; ?>" class="button app">Golf Stats</a>
         </div>
     </div>
 

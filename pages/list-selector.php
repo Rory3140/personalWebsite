@@ -37,10 +37,14 @@
         ?> 
     </div>
 
-    <div id="wide-container" class="container">
-        <h1>Select List</h1>
-        <a href="<?php echo $publicListPath; ?>" class="button" >Public List</a>
-        <a href="<?php echo $personalListPath; ?>" class="button" >Personal List</a>
+    <div class="default-container wide-container">
+        <div class="container-header">
+            <h1>Select List</h1>
+        </div>
+        <div>
+            <a href="<?php echo $publicListPath; ?>" class="button" >Public List</a>
+            <a href="<?php echo $personalListPath; ?>" class="button" >Personal List</a>
+        </div>
     </div>
 
     <script src="<?php echo $jsPath; ?>"></script>

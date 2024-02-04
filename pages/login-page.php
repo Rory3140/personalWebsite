@@ -40,8 +40,10 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1>LOGIN</h1>
+    <div class="default-container">
+        <div class="container-header">
+            <h1>Login</h1>
+        </div>
         <form action="" method="post" name="statsForm">
             <div>
                 <label for="username">username</label>
@@ -56,7 +58,7 @@
                     <?php echo $error; ?>
                 </p>
             <?php endif; ?>
-            <input class="button" type="submit" name="submit-button" value="login">
+            <input class="button" type="submit" name="submit-button" value="Login">
             <label for="submit-button">don't have an account? <a href="<?php echo $signupPath; ?>">Sign Up</a></label>
         </form>
     </div>

@@ -49,8 +49,10 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1>SIGN UP</h1>
+    <div class="default-container">
+        <div class="container-header">
+            <h1>Sign Up</h1>
+        </div>
         <form action="" method="post">
             <div>
                 <label for="username">username</label>
