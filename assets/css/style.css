@@ -80,7 +80,7 @@ body {
 }
 
 .wide-container {
-  min-width: 400px;
+  min-width: 325px;
   width: 65%;
 }
 
@@ -101,9 +101,15 @@ body {
   margin: 15px;
 }
 
+.container-header a {
+  width: 100px;
+  height: auto;
+  background-color: #c5d6db;
+}
+
 .container-header h1::after {
   content: "";
-  background: #ffc20c;
+  background-color: #ffc20c;
   width: 75%;
   height: 4px;
   border-radius: 2px;
