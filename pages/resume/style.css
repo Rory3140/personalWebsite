@@ -168,9 +168,8 @@ body {
 
 #about img {
   align-self: center;
-
-  width: 20%;
-  min-width: 20%;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
 }
 
