@@ -23,6 +23,9 @@
             <div class="line"></div>
             <div class="line"></div>
         </div>
+        <a href="<?php echo $homePath; ?>">
+            <img id="home-icon" src="<?php echo $homeIcon; ?>" alt="Home Icon">
+        </a>
     </nav>
 
     <div id="nav-menu">
@@ -40,9 +43,11 @@
     <div class="default-container wide-container">
         <div class="container-header">
             <h1>Select List</h1>
+            <p>Choose between your own personal to-do list to keep track of upcoming tasks or a shared to-do list 
+                to be displayed on an e-ink display.</p>
         </div>
         <div>
-            <a href="<?php echo $publicListPath; ?>" class="button" >Public List</a>
+            <a href="<?php echo $sharedListPath; ?>" class="button" >Shared List</a>
             <a href="<?php echo $personalListPath; ?>" class="button" >Personal List</a>
         </div>
     </div>

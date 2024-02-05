@@ -37,6 +37,16 @@ body {
   background-color: #333;
 }
 
+#nav-bar a {
+ margin: 10px;
+}
+
+#home-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
 #nav-menu {
   position: fixed;
   top: 50px;
@@ -101,6 +111,10 @@ body {
   margin: 15px;
 }
 
+.container-header p {
+  width: 50%;
+}
+
 .container-header a {
   width: 100px;
   height: auto;
@@ -111,6 +125,16 @@ body {
   content: "";
   background-color: #ffc20c;
   width: 75%;
+  height: 4px;
+  border-radius: 2px;
+  display: block;
+}
+
+.container-header p::after {
+  content: "";
+  background-color: #ffc20c;
+  width: 75%;
+  margin-top: 5px;
   height: 4px;
   border-radius: 2px;
   display: block;

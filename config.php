@@ -8,6 +8,7 @@ $pagesPath = "/pages/";
 $cssPath = $assetsPath . "css/style.css";
 $jsPath = $assetsPath . "js/script.js";
 $websiteIcon = $assetsPath . "images/website-icon.ico";
+$homeIcon = $assetsPath . "images/home-icon.svg";
 
 $connPath = "../includes/conn.php";
 $logoutPath = $includesPath . "logout.php";
@@ -17,7 +18,7 @@ $homePath = $pagesPath . "home-page.php";
 $loginPath = $pagesPath . "login-page.php";
 $signupPath = $pagesPath . "signup-page.php";
 $listSelectorPath = $pagesPath . "list-selector.php";
-$publicListPath = $pagesPath . "public-list.php";
+$sharedListPath = $pagesPath . "shared-list.php";
 $personalListPath = $pagesPath . "personal-list.php";
 $golfStatsPath = $pagesPath . "golf-stats.php";
 $profilePath = $pagesPath . "profile.php";

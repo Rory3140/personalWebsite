@@ -31,6 +31,9 @@
             <div class="line"></div>
             <div class="line"></div>
         </div>
+        <a href="<?php echo $homePath; ?>">
+            <img id="home-icon" src="<?php echo $homeIcon; ?>" alt="Home Icon">
+        </a>
     </nav>
     
     <div id="nav-menu">

@@ -51,6 +51,9 @@
             <div class="line"></div>
             <div class="line"></div>
         </div>
+        <a href="<?php echo $homePath; ?>">
+            <img id="home-icon" src="<?php echo $homeIcon; ?>" alt="Home Icon">
+        </a>
     </nav>
     
     <div id="nav-menu">
@@ -68,7 +71,7 @@
 
     <div class="default-container wide-container">
         <div class="container-header">
-            <h1>Public To-Do List</h1>
+            <h1>Shared To-Do List</h1>
         </div>
 
         <div>
