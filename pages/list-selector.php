@@ -43,14 +43,23 @@
     <div class="default-container wide-container">
         <div class="container-header">
             <h1>Select List</h1>
-            <p>Choose between your own personal to-do list to keep track of upcoming tasks or a shared to-do list 
-                to be displayed on an e-ink display.</p>
+            
         </div>
+
+        <p id="description">Choose between your own personal to-do list to keep track of upcoming tasks or a shared to-do list 
+        to be displayed on an e-ink display.</p>
+        
         <div>
             <a href="<?php echo $sharedListPath; ?>" class="button" >Shared List</a>
             <a href="<?php echo $personalListPath; ?>" class="button" >Personal List</a>
         </div>
     </div>
+
+    <footer>
+        <p>&copy; 2024 Rory Wood</p>
+        <p>Email: <a href="mailto:rorywood9@live.com">rorywood9@live.com</a></p>
+        <p>Website: <a href="http://www.rorywood.co.uk">www.rorywood.co.uk</a></p>
+    </footer>
 
     <script src="<?php echo $jsPath; ?>"></script>
 </body>

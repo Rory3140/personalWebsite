@@ -66,6 +66,12 @@
         </form>
     </div>
 
+    <footer>
+        <p>&copy; 2024 Rory Wood</p>
+        <p>Email: <a href="mailto:rorywood9@live.com">rorywood9@live.com</a></p>
+        <p>Website: <a href="http://www.rorywood.co.uk">www.rorywood.co.uk</a></p>
+    </footer>
+
     <script src="<?php echo $jsPath; ?>"></script>
 </body>
 

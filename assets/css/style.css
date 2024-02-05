@@ -1,10 +1,35 @@
-/* ---------------- Body ---------------- */
+/* ---------------- Global ---------------- */
 body {
   background-color: #ffd3d7;
   display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin: 0;
+}
+
+#description::after {
+  content: "";
+  background-color: #ffc20c;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 5px;
+  height: 4px;
+  border-radius: 2px;
+  display: block;
+}
+
+footer {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  color: #333;
+}
+
+footer p {
+  margin: 10px;
 }
 
 /*---------------- Navbar ----------------*/
@@ -83,7 +108,7 @@ body {
   width: 20%;
   min-width: 300px;
   padding: 30px 20px;
-  margin: 60px 10px;
+  margin: 60px 10px 0px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -136,17 +161,6 @@ body {
   display: block;
 }
 
-.container-header p::after {
-  content: "";
-  background-color: #ffc20c;
-  width: 100%;
-  margin: 0 auto;
-  margin-top: 5px;
-  height: 4px;
-  border-radius: 2px;
-  display: block;
-}
-
 /* ---------------- Button ---------------- */
 .button {
   display: flex;
@@ -189,17 +203,6 @@ body {
 
 .home-block p {
   margin: 0px 20px;
-}
-
-.home-block p::after {
-  content: "";
-  background-color: #ffc20c;
-  width: 100%;
-  margin: 0 auto;
-  margin-top: 5px;
-  height: 4px;
-  border-radius: 2px;
-  display: block;
 }
 
 .app {

@@ -60,7 +60,7 @@
         </div>
 
         <div class="home-block">
-            <p>Welcome to my personal website which provides a comprehensive overview of my skills and experiences in web development. 
+            <p id="description">Welcome to my personal website which provides a comprehensive overview of my skills and experiences in web development. 
             The digital resume offers insights into my professional journey, while the projects section highlights PHP-driven 
             creations seamlessly connected to a MySQL database. For inquiries or project proposals, 
             please feel free to reach out. Thank you for exploring my website.</p>
@@ -72,6 +72,12 @@
             <a href="<?php echo $resumePath; ?>" class="button app">Resume (old)</a>
         </div>
     </div>
+
+    <footer>
+        <p>&copy; 2024 Rory Wood</p>
+        <p>Email: <a href="mailto:rorywood9@live.com">rorywood9@live.com</a></p>
+        <p>Website: <a href="http://www.rorywood.co.uk">www.rorywood.co.uk</a></p>
+    </footer>
 
     <script src="<?php echo $jsPath; ?>"></script>
 </body>
