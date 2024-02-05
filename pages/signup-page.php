@@ -52,6 +52,9 @@
     <div class="default-container">
         <div class="container-header">
             <h1>Sign Up</h1>
+            <a id="login-home" href="<?php echo $homePath; ?>">
+                <img id="home-icon" src="<?php echo $homeIcon; ?>" alt="Home Icon">
+            </a>
         </div>
         <form action="" method="post">
             <div>

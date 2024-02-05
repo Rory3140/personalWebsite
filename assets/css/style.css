@@ -80,7 +80,7 @@ body {
 .default-container {
   background-color: #c5d6db;
   box-shadow: 10px 8px 0px #7c9eb7;
-  width: 35%;
+  width: 20%;
   min-width: 300px;
   padding: 30px 20px;
   margin: 60px 10px;
@@ -119,6 +119,10 @@ body {
   width: 100px;
   height: auto;
   background-color: #c5d6db;
+}
+
+.container-header #login-home {
+  width: 30px;
 }
 
 .container-header h1::after {
