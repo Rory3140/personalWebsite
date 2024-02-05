@@ -60,6 +60,13 @@
         </div>
 
         <div class="home-block">
+            <p>Welcome to my personal website which provides a comprehensive overview of my skills and experiences in web development. 
+            The digital resume offers insights into my professional journey, while the projects section highlights PHP-driven 
+            creations seamlessly connected to a MySQL database. For inquiries or project proposals, 
+            please feel free to reach out. Thank you for exploring my website.</p>
+        </div>
+        
+        <div class="home-block">
             <a href="<?php echo $listSelectorPath; ?>" class="button app">To-Do List</a>
             <a href="<?php echo $golfStatsPath; ?>" class="button app">Golf Stats</a>
             <a href="<?php echo $resumePath; ?>" class="button app">Resume (old)</a>

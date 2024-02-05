@@ -104,15 +104,16 @@ body {
 }
 
 .container-header h1 {
-  margin: 15px;
+  margin: 10px 15px;
 }
 
 .container-header h2 {
-  margin: 15px;
+  margin: 10px 15px;
 }
 
 .container-header p {
   width: 50%;
+  min-width: 300px;
 }
 
 .container-header a {
@@ -129,6 +130,7 @@ body {
   content: "";
   background-color: #ffc20c;
   width: 75%;
+  margin: 0 auto;
   height: 4px;
   border-radius: 2px;
   display: block;
@@ -137,7 +139,8 @@ body {
 .container-header p::after {
   content: "";
   background-color: #ffc20c;
-  width: 75%;
+  width: 100%;
+  margin: 0 auto;
   margin-top: 5px;
   height: 4px;
   border-radius: 2px;
@@ -181,7 +184,22 @@ body {
   justify-content: center;
   width: 100%;
   padding: 10px;
-  margin: 20px;
+  margin: 10px;
+}
+
+.home-block p {
+  margin: 0px 20px;
+}
+
+.home-block p::after {
+  content: "";
+  background-color: #ffc20c;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 5px;
+  height: 4px;
+  border-radius: 2px;
+  display: block;
 }
 
 .app {
@@ -230,6 +248,7 @@ label {
   background: none;
   opacity: 0.3;
   transition: all 0.14s ease-out;
+  cursor: pointer;
 }
 
 .delete-button:hover {
