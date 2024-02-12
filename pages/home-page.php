@@ -1,16 +1,16 @@
 <?php
-    include_once '../config.php';
-    include_once $connPath;
-    
-    // Start the session
-    session_start();
+include_once '../config.php';
+include_once $connPath;
 
-    // Check if the user is logged in (userid is stored in the session)
-    if (isset($_SESSION['userid'])) {
-        // Access the userid and username from the session
-        $userid = $_SESSION['userid'];
-        $username = $_SESSION['username'];
-    }
+// Start the session
+session_start();
+
+// Check if the user is logged in (userid is stored in the session)
+if (isset($_SESSION['userid'])) {
+    // Access the userid and username from the session
+    $userid = $_SESSION['userid'];
+    $username = $_SESSION['username'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -35,44 +35,42 @@
             <img id="home-icon" src="<?php echo $homeIcon; ?>" alt="Home Icon">
         </a>
         <div class="profile-icon">
-            <?php 
-                if (isset($_SESSION['userid'])) {
-                    echo "<h2>" . $username . "</h2>";
-                } else {
-                    echo "<a href=" . $loginPath . " class='button' id='login'>Login</a>";
-                }
+            <?php
+            if (isset($_SESSION['userid'])) {
+                echo "<h2>" . $username . "</h2>";
+            } else {
+                echo "<a href=" . $loginPath . " class='button' id='login'>Login</a>";
+            }
             ?>
         </div>
     </nav>
-    
+
     <div id="nav-menu">
         <?php
-            if (!isset($_SESSION['userid'])) {
-                echo "<a href=" . $loginPath . " class='button' id='login'>Login</a>";
-            } else {
-                echo "<a href=" . $profilePath . " class='button'>Profile</a>";
-                echo "<a href=" . $logoutPath . " class='button' id='logout'>Logout</a>";
-            }
-        ?> 
+        if (!isset($_SESSION['userid'])) {
+            echo "<a href=" . $loginPath . " class='button' id='login'>Login</a>";
+        } else {
+            echo "<a href=" . $profilePath . " class='button'>Profile</a>";
+            echo "<a href=" . $logoutPath . " class='button' id='logout'>Logout</a>";
+        }
+        ?>
     </div>
 
     <div class="default-container wide-container" id="home-container">
         <div class="container-header">
-             <h1>Dashboard</h1>
+            <h1>Dashboard</h1>
         </div>
 
-        <div class="home-block">
-            <p id="description">Welcome to my personal website which provides a comprehensive overview of my skills and experiences in web development. 
-            The digital resume offers insights into my professional journey, while the projects section highlights PHP-driven 
-            creations seamlessly connected to a MySQL database. For inquiries or project proposals, 
-            please feel free to reach out. Thank you for exploring my website.</p>
-        </div>
-        
-        <div class="home-block">
-            <a href="<?php echo $listSelectorPath; ?>" class="button app">To-Do List</a>
-            <a href="<?php echo $golfStatsPath; ?>" class="button app">Golf Stats</a>
-            <a href="<?php echo $resumePath; ?>" class="button app">Resume (old)</a>
-        </div>
+        <p id="description">Welcome to my personal website which provides a comprehensive overview of my skills and experiences in web development.
+            The projects consist of PHP-driven creations seamlessly connected to a MySQL database. For inquiries or project proposals,
+            please feel free to reach out. Thank you for exploring my website. </p>
+    </div>
+
+    <div class="home-block">
+        <a href="<?php echo $listSelectorPath; ?>" class="button app">To-Do List</a>
+        <a href="<?php echo $golfStatsPath; ?>" class="button app">Golf Stats</a>
+        <a href="<?php echo $resumePath; ?>" class="button app">Resume (old)</a>
+    </div>
     </div>
 
     <footer>
