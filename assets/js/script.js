@@ -1,18 +1,6 @@
 // ---------------- Checks script linking ----------------
 console.log("script.js Linked");
 
-// ---------------- Sticky navbar ----------------
-var navBar = document.getElementById("nav-bar");
-var navDim = navBar.offsetTop;
-
-window.onscroll = function () {
-  if (window.pageYOffset >= navDim) {
-    navBar.classList.add("sticky");
-  } else {
-    navBar.classList.remove("sticky");
-  }
-};
-
 // ---------------- Navbar opening on-click ----------------
 var menuButton = document.getElementById("menu-icon");
 var navMenu = document.getElementById("nav-menu");

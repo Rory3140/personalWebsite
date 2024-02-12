@@ -72,6 +72,23 @@ footer p {
   cursor: pointer;
 }
 
+.profile-icon {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.profile-icon a {
+  width: 100px;
+  height: auto;
+  background-color: #c5d6db;
+}
+
+.profile-icon img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
 #nav-menu {
   position: fixed;
   top: 50px;
@@ -93,12 +110,6 @@ footer p {
   width: 100px;
   height: 30px;
   transition: all 0.5s;
-}
-
-.sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
 }
 
 /* ---------------- Container ---------------- */
@@ -139,12 +150,6 @@ footer p {
 .container-header p {
   width: 50%;
   min-width: 300px;
-}
-
-.container-header a {
-  width: 100px;
-  height: auto;
-  background-color: #c5d6db;
 }
 
 .container-header #login-home {

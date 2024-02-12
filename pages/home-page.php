@@ -34,6 +34,15 @@
         <a href="<?php echo $homePath; ?>">
             <img id="home-icon" src="<?php echo $homeIcon; ?>" alt="Home Icon">
         </a>
+        <div class="profile-icon">
+            <?php 
+                if (isset($_SESSION['userid'])) {
+                    echo "<h2>" . $username . "</h2>";
+                } else {
+                    echo "<a href=" . $loginPath . " class='button' id='login'>Login</a>";
+                }
+            ?>
+        </div>
     </nav>
     
     <div id="nav-menu">
@@ -50,13 +59,6 @@
     <div class="default-container wide-container" id="home-container">
         <div class="container-header">
              <h1>Dashboard</h1>
-            <?php 
-                if (isset($_SESSION['userid'])) {
-                    echo "<h2>Welcome, " . $username . "</h2>";
-                } else {
-                    echo "<a href=" . $loginPath . " class='button' id='login'>Login</a>";
-                }
-            ?>
         </div>
 
         <div class="home-block">
