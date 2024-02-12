@@ -77,15 +77,15 @@ footer p {
   margin-right: 20px;
 }
 
-.profile-icon a {
+#nav-login {
   width: 100px;
   height: auto;
   background-color: #c5d6db;
 }
 
 .profile-icon img {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
 }
 

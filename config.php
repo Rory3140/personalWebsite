@@ -24,4 +24,8 @@ $golfStatsPath = $pagesPath . "golf-stats.php";
 $profilePath = $pagesPath . "profile.php";
 
 $resumePath = $pagesPath . "resume/index.html";
+
+
+// Define icon file paths
+$profileIcon = $assetsPath . "images/profile-icon.svg";
 ?>
