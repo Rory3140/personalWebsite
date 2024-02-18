@@ -1,0 +1,63 @@
+/*---------------- Navbar ----------------*/
+#nav-bar {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    background-color: #553cf7;
+    border-bottom: 2px solid #333;
+    z-index: 1;
+}
+
+#menu-icon {
+    margin: 10px;
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.line {
+    width: 100%;
+    height: 4px;
+    background-color: white;
+}
+
+#nav-bar a {
+    margin: 10px;
+}
+
+#home-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#nav-menu {
+    position: fixed;
+    top: 50px;
+    left: -110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #553cf7;
+    box-shadow: 0 0 10px 0 #333;
+    width: 100px;
+    height: 100vh;
+    transition: all 0.5s;
+}
+
+#nav-menu a {
+    display: flex;
+    background-color: #c5d6db;
+    position: relative;
+    left: -200px;
+    width: 100px;
+    height: 30px;
+    transition: all 0.5s;
+}

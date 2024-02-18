@@ -25,6 +25,7 @@ $profilePath = $pagesPath . "profile.php";
 $resumePath = $pagesPath . "resume.php";
 
 // Define page css paths
+$cssNavPath = $assetsPath . "css/nav.css";
 $cssResumePath = $assetsPath . "css/resume.css";
 
 // Define page js paths

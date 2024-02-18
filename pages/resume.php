@@ -10,6 +10,7 @@ include_once '../config.php';
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="<?php echo $websiteIcon; ?>">
+    <link rel="stylesheet" href="<?php echo $cssNavPath; ?>">
     <link rel="stylesheet" href="<?php echo $cssResumePath; ?>">
 
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
@@ -118,6 +119,9 @@ include_once '../config.php';
                     <li>Intro to python</li>
                 </ul>
             </div>
+
+            <div class="spacer"></div>
+
             <h3>Bangor Grammar School, Northern Ireland</h3>
             <p>
                 Prior to college I attended Bangor Grammar School where I began
@@ -128,6 +132,41 @@ include_once '../config.php';
 
         <div class="container secondary-container" id="work-experience">
             <h2>Work Experience</h2>
+            <h3>
+                Student Assistant - Siena College Computer Science Department
+            </h3>
+            <h4>2023 - Present</h4>
+            <p>
+                While at college I have an on-campus job in the computer science
+                department where I assist the professors in a diverse range of
+                tasks such as conducting research and providing guidance to fellow
+                students through tutoring sessions.
+            </p>
+
+            <div class="spacer"></div>
+
+            <h3>Telephone Interviewer - Mango Direct Marketing, Bangor</h3>
+            <h4>2022</h4>
+            <p>
+                I worked with various clients and customers in an office
+                environment where I was conducting marketing/research surveys and
+                promoting a variety of products to new and existing clients.
+                Through this experience, I was able to refine my sales techniques
+                and customer service skills while also gaining a deeper
+                understanding of the marketing strategies and business practices
+                required to succeed in a competitive market.
+            </p>
+
+            <div class="spacer"></div>
+
+            <h3>Floor Staff/Bar Staff - The Stables, Groomsport</h3>
+            <h4>2019 - 2021</h4>
+            <p>
+                This includes all areas of customer service in a busy restaurant
+                including taking orders, serving, preparing bills and taking
+                payment. Also includes checking stock and dealing with customer
+                complaints or issues.
+            </p>
         </div>
 
         <div class="container" id="contact">
