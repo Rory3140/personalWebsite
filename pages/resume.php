@@ -141,7 +141,7 @@ include_once '../config.php';
         <p>Website: <a href="http://www.rorywood.co.uk" target=”_blank”>www.rorywood.co.uk</a></p>
     </footer>
 
-    <script src="<?php echo $jsPath; ?>"></script>
+    <script src="<?php echo $jsResumePath; ?>"></script>
 </body>
 
 </html>
