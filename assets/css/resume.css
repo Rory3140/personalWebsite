@@ -51,35 +51,59 @@ footer p {
 }
 
 /*---------------- Header ----------------*/
-.profile-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 30vw;
-    min-width: 300px;
+.card {
+    width: 300px;
+    height: 375px;
     border-radius: 10px;
-    padding: 10px;
     margin: 20px;
     border-bottom: #553cf7 10px solid;
     box-shadow: 0 0 10px 0 #333;
     background-color: white;
+    transform-style: preserve-3d;
+    transition: transform 1s;
 }
 
-.profile-card img {
+.card.is-flipped {
+    transform: rotateY(-180deg);
+}
+
+.card-content {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.card-content img {
     width: 200px;
     height: 200px;
     margin-top: 20px;
     border-radius: 50%;
 }
 
-.profile-card h1 {
+.card-content h1 {
     font-size: 2em;
     margin: 0;
 }
 
-.profile-card p {
+.card-content p {
     margin: 0;
+}
+
+.card-front,
+.card-back {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+.card-back {
+    height: 100%;
+    width: 100%;
+    transform: rotateY(180deg);
 }
 
 .social-links {
@@ -131,7 +155,7 @@ footer p {
 }
 
 .language-icons div:hover {
-    opacity: 0.5;
+    opacity: 0.75;
 }
 
 .language-icons div i {
@@ -140,7 +164,7 @@ footer p {
 
 .scroll-button {
     margin-top: auto;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     width: 95%;
     display: flex;
     justify-content: center;
@@ -167,6 +191,23 @@ footer p {
     transform: rotate(45deg);
 }
 
+/*---------------- Overlay ----------------*/
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
 /*---------------- Main ----------------*/
 .container {
     display: flex;
@@ -176,7 +217,7 @@ footer p {
     background-color: #F5F5F5;
     box-sizing: border-box;
     width: 100%;
-    padding: 10px;
+    padding: 20px;
 }
 
 .secondary-container {
@@ -189,6 +230,12 @@ footer p {
     color: white;
     padding: 10px 20px;
     border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.container h2:hover {
+    opacity: 0.75;
 }
 
 .container h3 {
@@ -204,7 +251,7 @@ footer p {
 }
 
 .container p {
-    font-weight: normal;
+    align-self: flex-start;
     margin-bottom: 20px;
 }
 

@@ -32,3 +32,11 @@ function scrollAbove(id) {
   let dims = element.getBoundingClientRect();
   window.scrollTo(window.scrollX, dims.top + window.scrollY - margin);
 }
+
+// ---------------- Overlay----------------
+
+var card = document.querySelector(".card");
+
+function flipCard() {
+  card.classList.toggle("is-flipped");
+}

@@ -34,28 +34,33 @@ include_once '../config.php';
     </div>
 
     <header>
-        <div class="profile-card">
-            <div>
+        <div class="card">
+            <div class="card-content card-front">
                 <img src="<?php echo $profilePicture; ?>" alt="Profile Icon">
                 <div>
                     <h1>Rory Wood</h1>
                     <p>Siena College</p>
                 </div>
+                <div class="social-links">
+                    <a href="https://github.com/Rory3140" target=”_blank”>
+                        <i class="devicon-github-original"></i>
+                    </a>
+                    <a href="mailto:rorywood9@live.com" target=”_blank”>
+                        <i class="fa fa-envelope"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/rory-s-wood/" target=”_blank”>
+                        <i class="devicon-linkedin-plain"></i>
+                    </a>
+                </div>
             </div>
-            <div class="social-links">
-                <a href="https://github.com/Rory3140" target=”_blank”>
-                    <i class="devicon-github-original"></i>
-                </a>
-                <a href="mailto:rorywood9@live.com" target=”_blank”>
-                    <i class="fa fa-envelope"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/rory-s-wood/" target=”_blank”>
-                    <i class="devicon-linkedin-plain"></i>
-                </a>
+
+            <div class="card-content card-back">
+                <h2>Software Developer</h2>
             </div>
         </div>
+
         <div class="language-icons">
-            <div id="javascript"><i class="devicon-javascript-plain"></i></div>
+            <div id="javascript" onclick="flipCard()"><i class="devicon-javascript-plain"></i></div>
             <div id="java"><i class="devicon-java-plain"></i></div>
             <div id="php"><i class="devicon-php-plain"></i></div>
             <div id="python"><i class="devicon-python-plain"></i></div>
@@ -69,7 +74,7 @@ include_once '../config.php';
 
     <main>
         <div class="container secondary-container" id="about-me">
-            <h2>About Me</h2>
+            <h2 onclick="scrollAbove('about-me')">About Me</h2>
             <p>
                 I am an enthusiastic, outgoing, and positive person with an eagerness to learn and
                 embrace new challenges. I have had a passion for computers and technology for as long
@@ -88,8 +93,8 @@ include_once '../config.php';
             </p>
         </div>
 
-        <div class="container" id="education">
-            <h2>Education</h2>
+        <div class=" container" id="education">
+            <h2 onclick="scrollAbove('education')">Education</h2>
 
             <h3>Siena College, New York</h3>
             <p>
@@ -131,7 +136,7 @@ include_once '../config.php';
         </div>
 
         <div class="container secondary-container" id="work-experience">
-            <h2>Work Experience</h2>
+            <h2 onclick="scrollAbove('work-experience')">Work Experience</h2>
             <h3>
                 Student Assistant - Siena College Computer Science Department
             </h3>
@@ -170,7 +175,7 @@ include_once '../config.php';
         </div>
 
         <div class="container" id="contact">
-            <h2>Contact</h2>
+            <h2 onclick="scrollAbove('contact')">Contact</h2>
         </div>
     </main>
 
