@@ -69,9 +69,9 @@ if (isset($_SESSION['userid'])) {
         </div>
 
         <div class="home-block">
+            <a href="<?php echo $resumePath; ?>" class="button app">Resume</a>
             <a href="<?php echo $listSelectorPath; ?>" class="button app">To-Do List</a>
             <a href="<?php echo $golfStatsPath; ?>" class="button app">Golf Stats</a>
-            <a href="<?php echo $resumePath; ?>" class="button app">Resume (old)</a>
         </div>
     </div>
 

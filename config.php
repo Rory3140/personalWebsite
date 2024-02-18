@@ -23,9 +23,13 @@ $personalListPath = $pagesPath . "personal-list.php";
 $golfStatsPath = $pagesPath . "golf-stats.php";
 $profilePath = $pagesPath . "profile.php";
 
-$resumePath = $pagesPath . "resume/index.html";
+$resumePath = $pagesPath . "resume.php";
+
+// Define page css paths
+$cssResumePath = $assetsPath . "css/resume.css";
 
 
 // Define icon file paths
 $profileIcon = $assetsPath . "images/profile-icon.svg";
+$profilePicture = $assetsPath . "images/profile-picture.jpg";
 ?>
