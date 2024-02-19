@@ -54,11 +54,27 @@
 }
 
 #nav-menu a {
-    display: flex;
-    background-color: #c5d6db;
+    margin: 10px;
+    padding: 10px;
+    color: white;
+    border-bottom: #fff 2px solid;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     left: -200px;
     width: 100px;
     height: 30px;
     transition: all 0.5s;
+
+    z-index: 2;
+    cursor: pointer;
+}
+
+#nav-menu a:hover {
+    background-color: #fff;
+    border-radius: 10px;
+    color: #553cf7;
+    transform: translateX(10px);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }

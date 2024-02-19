@@ -294,6 +294,11 @@ footer p {
     margin: 5px 0px;
 }
 
+.contact-info {
+    margin: 0px;
+    padding: 0px;
+}
+
 /*---------------- Reactive ----------------*/
 @media screen and (max-width: 550px) {
     .language-icons div i {

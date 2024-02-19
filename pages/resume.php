@@ -19,7 +19,7 @@ include_once '../config.php';
 
 <body>
     <nav id="nav-bar">
-        <div id="menu-icon">
+        <div id="menu-icon" onclick="openCloseMenu()">
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
@@ -30,7 +30,10 @@ include_once '../config.php';
     </nav>
 
     <div id="nav-menu">
-
+        <a class="button" onclick="scrollAbove('about-me')">About Me</a>
+        <a class="button" onclick="scrollAbove('education')">Education</a>
+        <a class="button" onclick="scrollAbove('work-experience')">Work Experience</a>
+        <a class="button" onclick="scrollAbove('contact')">Contact</a>
     </div>
 
     <header>
@@ -241,6 +244,10 @@ include_once '../config.php';
 
         <div class="container" id="contact">
             <h2 onclick="scrollAbove('contact')">Contact</h2>
+            <p class="contact-info">If you would like to get in touch with me, please feel free to contact me using the details below:</p>
+            <p class="contact-info">Email: <a href="mailto:rorywood9@live.com" target=”_blank”>rorywood9@live.com</a></p>
+            <p class="contact-info">UK Phone: +44 7539 801415</p>
+            <p class="contact-info">US Phone: +1 (518) 528 0555</p>
             <div class="spacer"></div>
         </div>
     </main>
