@@ -55,17 +55,72 @@ include_once '../config.php';
             </div>
 
             <div class="card-content card-back">
-                <h2>Software Developer</h2>
+                <div class="coding-content java">
+                    <h2>Java</h2>
+                    <p>
+                        I have been coding in Java for over six years now making it the programming
+                        language that I am most proficient in. Over the years I have completed numerous
+                        projects using Java. These have ranged from simple and advanced algorithms to a
+                        quiz application completed using Java Swing which boasted a comprehensive login
+                        and registration as well as seamless integration with a back-end database.
+                    </p>
+                </div>
+                <div class="coding-content php">
+                    <h2>PHP</h2>
+                    <p>
+                        I gained proficiency in PHP through self-study. After learning the fundamentals
+                        of HTML, CSS, and JavaScript in my web development course, I took on numerous
+                        projects that demanded dynamic website functionality, thus necessitating the
+                        utilization of PHP for coding purposes.
+                    </p>
+                </div>
+                <div class="coding-content javascript">
+                    <h2>Javascript</h2>
+                    <p>
+                        I first gained exposure to JavaScript in my web development class at university
+                        where I learned the fundamentals of the language and the basics of the React
+                        framework. Since then, I have taught myself more advanced aspects of JavaScript
+                        to complete various front-end and back-end projects.
+                    </p>
+                </div>
+                <div class="coding-content react">
+                    <h2>React</h2>
+                    <p>
+                        I have been using React for over a year now and have completed numerous projects
+                        using the framework. I have found React to be an incredibly powerful tool for
+                        creating dynamic and responsive web applications and have enjoyed using it to
+                        create a variety of projects.
+                </div>
+                <div class="coding-content python">
+                    <h2>Python</h2>
+                    <p>
+                        I picked up Python myself at secondary school and continued it in university in a
+                        robotics class.I enjoy using Python for web automation and creating customized
+                        scripts to streamline processes.
+                    </p>
+                </div>
+                <div class="coding-content c">
+                    <h2>C/C++</h2>
+                    <p>
+                        Through self-teaching I have gained a strong understanding of C++ and its similarities
+                        to C have allowed me to quickly adapt to coding at a high level. I have used C++ mainly
+                        for developing applications and game development which has allowed me to utilize my
+                        skills in creative and practical ways.
+                    </p>
+                </div>
+                <div class="return-button" onclick="flip()">
+                    <i class="fa fa-arrow-left"></i>
+                </div>
             </div>
         </div>
 
         <div class="language-icons">
-            <div id="javascript" onclick="flipCard()"><i class="devicon-javascript-plain"></i></div>
-            <div id="java"><i class="devicon-java-plain"></i></div>
-            <div id="php"><i class="devicon-php-plain"></i></div>
-            <div id="python"><i class="devicon-python-plain"></i></div>
-            <div id="react"><i class="devicon-react-plain"></i></div>
-            <div id="c"><i class="devicon-c-plain"></i></div>
+            <div id="java" onclick="flipCard(this)"><i class="devicon-java-plain"></i></div>
+            <div id="php" onclick="flipCard(this)"><i class="devicon-php-plain"></i></div>
+            <div id="javascript" onclick="flipCard(this)"><i class="devicon-javascript-plain"></i></div>
+            <div id="react" onclick="flipCard(this)"><i class="devicon-react-plain"></i></div>
+            <div id="python" onclick="flipCard(this)"><i class="devicon-python-plain"></i></div>
+            <div id="c" onclick="flipCard(this)"><i class="devicon-c-plain"></i></div>
         </div>
         <div class="scroll-button" onclick="scrollAbove('about-me')">
             <div class="scroll-icon"></div>
@@ -124,32 +179,43 @@ include_once '../config.php';
                     <li>Intro to python</li>
                 </ul>
             </div>
-
             <div class="spacer"></div>
-
             <h3>Bangor Grammar School, Northern Ireland</h3>
             <p>
                 Prior to college I attended Bangor Grammar School where I began
                 studying Computer Science at GCSE level and continued it into my
                 A-Levels where I achieved an A* Grade.
             </p>
+            <div class="spacer"></div>
         </div>
 
         <div class="container secondary-container" id="work-experience">
             <h2 onclick="scrollAbove('work-experience')">Work Experience</h2>
+
             <h3>
                 Student Assistant - Siena College Computer Science Department
             </h3>
-            <h4>2023 - Present</h4>
+            <h4>2022 - Present</h4>
             <p>
                 While at college I have an on-campus job in the computer science
                 department where I assist the professors in a diverse range of
                 tasks such as conducting research and providing guidance to fellow
                 students through tutoring sessions.
             </p>
-
             <div class="spacer"></div>
-
+            <h3>
+                Student Tutor - Siena College Computer Science Department
+            </h3>
+            <h4>2023 - Present</h4>
+            <p>
+                At college I also have another on-campus job as a student tutor for
+                the Advanced Programming and Intro to Java classes in the computer
+                science department after being recommended for the job by my professors.
+                The job mainly consists of students from these classes booking
+                appointments with me and I assist the students with work and explain
+                various concepts to them.
+            </p>
+            <div class="spacer"></div>
             <h3>Telephone Interviewer - Mango Direct Marketing, Bangor</h3>
             <h4>2022</h4>
             <p>
@@ -161,9 +227,7 @@ include_once '../config.php';
                 understanding of the marketing strategies and business practices
                 required to succeed in a competitive market.
             </p>
-
             <div class="spacer"></div>
-
             <h3>Floor Staff/Bar Staff - The Stables, Groomsport</h3>
             <h4>2019 - 2021</h4>
             <p>
@@ -172,10 +236,12 @@ include_once '../config.php';
                 payment. Also includes checking stock and dealing with customer
                 complaints or issues.
             </p>
+            <div class="spacer"></div>
         </div>
 
         <div class="container" id="contact">
             <h2 onclick="scrollAbove('contact')">Contact</h2>
+            <div class="spacer"></div>
         </div>
     </main>
 
