@@ -116,6 +116,19 @@ footer p {
     animation: fadeIn 1s;
 }
 
+.coding-content div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.coding-content i {
+    font-size: 3em;
+    margin: 20px;
+}
+
 .coding-content p {
     padding: 10px;
 }

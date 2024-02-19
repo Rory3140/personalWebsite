@@ -59,7 +59,10 @@ include_once '../config.php';
 
             <div class="card-content card-back">
                 <div class="coding-content java">
-                    <h2>Java</h2>
+                    <div>
+                        <h2>Java</h2>
+                        <i class="devicon-java-plain-wordmark colored"></i>
+                    </div>
                     <p>
                         I have been coding in Java for over six years now making it the programming
                         language that I am most proficient in. Over the years I have completed numerous
@@ -69,7 +72,10 @@ include_once '../config.php';
                     </p>
                 </div>
                 <div class="coding-content php">
-                    <h2>PHP</h2>
+                    <div>
+                        <h2>PHP</h2>
+                        <i class="devicon-php-plain colored"></i>
+                    </div>
                     <p>
                         I gained proficiency in PHP through self-study. After learning the fundamentals
                         of HTML, CSS, and JavaScript in my web development course, I took on numerous
@@ -78,7 +84,10 @@ include_once '../config.php';
                     </p>
                 </div>
                 <div class="coding-content javascript">
-                    <h2>Javascript</h2>
+                    <div>
+                        <h2>Javascript</h2>
+                        <i class="devicon-javascript-plain colored"></i>
+                    </div>
                     <p>
                         I first gained exposure to JavaScript in my web development class at university
                         where I learned the fundamentals of the language and the basics of the React
@@ -87,7 +96,10 @@ include_once '../config.php';
                     </p>
                 </div>
                 <div class="coding-content react">
-                    <h2>React</h2>
+                    <div>
+                        <h2>React</h2>
+                        <i class="devicon-react-plain colored"></i>
+                    </div>
                     <p>
                         I have been using React for over a year now and have completed numerous projects
                         using the framework. I have found React to be an incredibly powerful tool for
@@ -95,7 +107,10 @@ include_once '../config.php';
                         create a variety of projects.
                 </div>
                 <div class="coding-content python">
-                    <h2>Python</h2>
+                    <div>
+                        <h2>Python</h2>
+                        <i class="devicon-python-plain colored"></i>
+                    </div>
                     <p>
                         I picked up Python myself at secondary school and continued it in university in a
                         robotics class.I enjoy using Python for web automation and creating customized
@@ -103,7 +118,10 @@ include_once '../config.php';
                     </p>
                 </div>
                 <div class="coding-content c">
-                    <h2>C/C++</h2>
+                    <div>
+                        <h2>C/C++</h2>
+                        <i class="devicon-c-plain colored"></i>
+                    </div>
                     <p>
                         Through self-teaching I have gained a strong understanding of C++ and its similarities
                         to C have allowed me to quickly adapt to coding at a high level. I have used C++ mainly
