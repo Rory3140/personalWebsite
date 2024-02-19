@@ -18,4 +18,4 @@ Options -Indexes
 
 # Redirects
 
-Redirect /resume http://www.rorywood.co.uk/pages/resume.php
+Redirect http://www.rorywood.co.uk/resume http://www./pages/resume.php
