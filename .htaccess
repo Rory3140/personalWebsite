@@ -1,19 +1,16 @@
 # Limit access to the .htaccess file
-
 <Files .htaccess>
 Order Allow,Deny
 Deny from all
 </Files>
 
 # Limit access to the conn.php file
-
 <Files "includes/conn.php">
 Order Allow,Deny
 Deny from all
 </Files>
 
 # Block indexing directories
-
 Options -Indexes
 
 # Redirects
