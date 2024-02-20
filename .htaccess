@@ -17,5 +17,4 @@ Deny from all
 Options -Indexes
 
 # Redirects
-
-Redirect http://www.rorywood.co.uk/resume http://www./pages/resume.php
+Redirect /resume http://localhost/pages/resume.php
