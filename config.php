@@ -24,6 +24,10 @@ $golfStatsPath = $pagesPath . "golf-stats.php";
 $profilePath = $pagesPath . "profile.php";
 $resumePath = $pagesPath . "resume.php";
 
+// Define external file paths
+$bouncingBallPath = "https://rory3140.github.io/bouncing-ball/";
+$calculatorPath = "https://rory3140.github.io/calculator/";
+
 // Define page css paths
 $cssNavPath = $assetsPath . "css/nav.css";
 $cssResumePath = $assetsPath . "css/resume.css";

@@ -185,7 +185,6 @@ footer p {
   margin: 13px;
   text-decoration: none;
   text-overflow: ellipsis;
-  text-overflow: ellipsis;
   transition: all 0.14s ease-out;
 }
 
@@ -195,7 +194,6 @@ footer p {
 }
 
 /* ---------------- Home Page ---------------- */
-
 .home-block {
   display: flex;
   flex-direction: column;
@@ -210,10 +208,25 @@ footer p {
   margin: 0px 20px;
 }
 
+.app-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+
+}
+
 .app {
-  width: 75%;
-  max-width: 300px;
+  width: 100px;
+  height: 100px;
   margin: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 /* ---------------- Form ---------------- */

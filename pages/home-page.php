@@ -62,16 +62,22 @@ if (isset($_SESSION['userid'])) {
         </div>
 
         <div class="home-block">
-            <h2 id="welcome">Welcome, <?php echo $username; ?>!</h2>
+            <?php
+            if (isset($_SESSION['userid'])) {
+                echo "<h2 id='welcome'>Welcome," . $username . "!</h2>";
+            }
+            ?>
             <p id="description">This is my personal website which provides a comprehensive overview of my skills and experiences in web development.
-                The projects consist of PHP-driven creations seamlessly connected to a MySQL database. For inquiries or project proposals,
+                The projects consist of PHP, React, and Javascript projects. For inquiries or project proposals,
                 please feel free to reach out. Thank you for exploring my website. </p>
         </div>
 
-        <div class="home-block">
-            <a href="<?php echo $resumePath; ?>" class="button app">Resume</a>
-            <a href="<?php echo $listSelectorPath; ?>" class="button app">To-Do List</a>
-            <a href="<?php echo $golfStatsPath; ?>" class="button app">Golf Stats</a>
+        <div class="app-block">
+            <a href="<?php echo $resumePath; ?>" class="button app"><span>Resume</span><span>PHP</span></a>
+            <a href="<?php echo $bouncingBallPath; ?>" class="button app"><span>Bouncing Ball</span> <span>Javascript</span></a>
+            <a href="<?php echo $calculatorPath; ?>" class="button app"><span>Calculator</span> <span>React</span></a>
+            <a href="<?php echo $listSelectorPath; ?>" class="button app"><span>To-Do List</span> <span>PHP</span></a>
+            <a href="<?php echo $golfStatsPath; ?>" class="button app"><span>Golf Stats</span> <span>PHP</span></a>
         </div>
     </div>
 
